@@ -1,0 +1,37 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath('../css/aplication.css'))?>
+    <script type="text/javascript" src="/../js/brix/jquery.js"></script>
+    <script type="text/javascript" src="/../js/brix/scripts.js"></script>
+</head>
+<body>
+<div class="navi">
+    <div class="logo">
+        <a href="/">"logo-berreich"</a>
+    </div>
+    <ul>
+        <li><a href="">Verkauf</a></li>
+        <li><a href="">Bilder-Galerie</a></li>
+        <li><a href="">Angebote</a></li>
+        <li><a href="">Kontakt</a></li>
+    </ul>
+</div>
+<div class="background">
+    <div class="container">
+        <?php echo $this->content; ?>
+    </div>
+</div>
+<?php echo $this->inlineScript() ?>
+</body>
+</html>

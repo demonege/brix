@@ -1,0 +1,229 @@
+.navi
+{
+  background: limegreen;
+  height: 60px;
+  width: 100%;
+  .logo
+  {
+    position: absolute;
+    background:forestgreen;
+    height: 60px;
+    width:60px;
+  }
+  ul
+  {
+    margin-left: 50%;
+    li
+    {
+      float: left;
+      margin-left: 10%;
+      margin-top: 3%;
+      text-align: center;
+      a
+      {
+        color:#000000;
+        text-decoration: none;
+      }
+      a:hover
+      {
+        color:#ffffff;
+      }
+    }
+  }
+}
+
+body
+{
+  height: 100%;
+}
+
+html
+{
+  clear:both;
+  font-family: 'PT Sans Caption', sans-serif;
+  height: 100%;
+}
+
+.Main
+{
+  width: 100%;
+  height:100%;
+  background-color: #ffffff;
+  padding: 0px 10px 0px 10px;
+  margin-top: 10px;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    font-size: 23px;
+    color:red;
+  }
+}
+
+.verkauf
+{
+  width: 100%;
+  height:100%;
+  background-color: #ffffff;
+  padding: 0px 10px 0px 10px;
+  margin-top: 10px;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    font-size: 23px;
+    color:red;
+  }
+}
+
+.bilder-galary
+{
+  height:100%;
+  background-color: #ffffff;
+  padding: 0px 10px 0px 10px;
+  margin-top: 10px;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    font-size: 23px;
+    color:#ffff00;
+  }
+  .slider
+  {
+    text-align: center;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+
+    .btn-back
+    {
+      left:0px;
+      top:50%;
+      height: 30px;
+      width: 30px;
+      background-color: red;
+      position: absolute;
+      z-index: 100;
+    }
+    .btn-next
+    {
+      right:0px;
+      top:50%;
+      height: 30px;
+      width: 30px;
+      background-color: red;
+      position: absolute;
+      z-index: 100;
+    }
+    .slider-content
+    {
+      height: 500px;
+      z-index:1;
+      .picture
+      {
+        position: absolute;
+        width:100%;
+        height:100%;
+
+        @include transition(opacity 1.5s, translate 20s);
+        //@include transform(rotateY(100deg));
+        //@include transform(translateX(0px));
+        opacity: 0;
+      }
+      .picture.show
+      {
+        //@include transform(rotateY(60deg));
+        //@include transform(translateX(100px));
+        height:100%;
+        &#pic-1{background-color: olivedrab; transition-timing-function: linear;}
+        &#pic-2{background-color: darkmagenta; transition-timing-function: linear;}
+        &#pic-3{background-color: aquamarine; transition-timing-function: linear;}
+        &#pic-4{background-color: chocolate; transition-timing-function: linear;}
+
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.angebot
+{
+  width: 100%;
+  height:100%;
+  background-color: #ffffff;
+  padding: 0px 10px 0px 10px;
+  margin-top: 10px;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    font-size: 23px;
+    color:red;
+  }
+  h2
+  {
+    text-align: center;
+    font-size: 18px;
+    color:blue;
+  }
+  table
+  {
+    width:100%;
+    height:500px;
+    tr
+    {
+      td
+      {
+        border:2px solid grey;
+      }
+    }
+  }
+  .content
+  {
+
+    .icon
+    {
+      left:0px;
+      height: 10px;
+      width:10px;
+      background:red;
+      margin: 0px;
+      padding:0px;
+      position: relative;
+    }
+    .text
+    {
+      text-align: center;
+      .head
+      {
+        font-size: 14px;
+        margin: 0px;
+        padding:0px;
+        color: gray;
+      }
+    }
+  }
+}
+
+.kontakt
+{
+  width: 100%;
+  height:100%;
+  background-color: #ffffff;
+  padding: 0px 10px 0px 10px;
+  margin-top: 10px;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    font-size: 23px;
+    color:red;
+  }
+}
+
+.background
+{
+  background:darkgreen;
+  height: 100%;
+}
