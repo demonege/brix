@@ -13,6 +13,21 @@ jQuery(document).ready(function(){
        });
     });
 
+    //Slider Element container and picture width
+    var cotainerwidth = jQuery('.slider-content .wrapper .container').children();
+    cotainerwidth = cotainerwidth.length * jQuery(cotainerwidth[0]).width();
+    jQuery('.slider-content .wrapper .container').css({"width": cotainerwidth + 'px'})
+
+
+    var picturewidth = jQuery('.wrapper').width();
+    var sliderElemen = jQuery('.slider-content .wrapper .container').children();
+    var translateValue = picturewidth;
+    var i = 0;
+    jQuery(sliderElemen).each(function(){
+        jQuery(sliderElemen[i]).css({"width": picturewidth + 'px'});
+        i++;
+    });
+
     //Slider element
     var sliderIndex = 0;
     jQuery('.btn-back').click(function(){
@@ -25,7 +40,7 @@ jQuery(document).ready(function(){
 
     function changePic(index) {
         console.log(index);
-        var picture = jQuery('.slider-content').children();
+        var picture = jQuery('.slider-content .wrapper .container').children();
         if(index >=  picture.length)
         {
             index = 0;
@@ -39,6 +54,9 @@ jQuery(document).ready(function(){
             if(i == index )
             {
                 jQuery(el).addClass('show');
+
+                var translateX = translateValue * (i);
+                jQuery('.slider-content .wrapper .container').css({"transform": "translateX(" + -translateX + 'px)'});
             }
             else
             {
