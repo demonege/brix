@@ -66,19 +66,53 @@ jQuery(document).ready(function(){
         return index;
     };
 
-/*        for(var i = 0; i < picture.length; i++)
-        {
-            console.log(picture[i]);
-            if(i == index )
-            {
-                picture[i].addClass('show');
+    //portfolio elements
+    function portfolio(event)
+    {
+        var buttonId = event.currentTarget.getAttribute('id');
+        var pictures = jQuery('.row').children();
+        pictures.each(function(index){
+                if(jQuery(pictures[index]).hasClass(buttonId))
+                {
+                    jQuery(pictures[index]).css("display","block");
+                }
+                else
+                {
+                    if(buttonId == 'alle')
+                    {
+                        jQuery(pictures[index]).css("display","block");
+                    }
+                    else
+                    {
+                        jQuery(pictures[index]).css("display","none");
+                    }
+                }
             }
-            else
-            {
-                picture[i].removeClass('show');
-            }
+        )
+    }
 
-        }
-*/
+    var buttons =  jQuery('.contentVerkauf').children();
+        buttons.each(function(i,el){
+            jQuery(el).click(portfolio);
+        });
 
+    //function for fullsizeLayer
+    var pictureNames = jQuery('.portfolio');
+    jQuery(pictureNames).each(function(i,el){
+        jQuery(el).click(function(){
+            jQuery.post('mainpage/layer',{plant: jQuery(pictureNames[i]).attr('id')}).done(function(data) {
+                jQuery('.layer .layer-content').html(data);
+                jQuery('.layer').addClass('active');
+
+            });
+        });
+    });
+
+    //function for close layer
+    jQuery('.close-layer').click(function(){
+        jQuery('.layer').removeClass('active');
+    });
 });
+
+
+

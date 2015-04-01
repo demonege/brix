@@ -96,20 +96,44 @@ html
   .row
   {
     display: flex;
-    height: 100%;
-    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .name
+  {
+    display:none;
+  }
+  .winterhart
+  {
+    dislay:block;
+  }
+  .pflegeleicht
+  {
+    dislay:block;
+  }
+  .wenig_licht
+  {
+    dislay:block;
+  }
+  .wenig_wasser
+  {
+    dislay:block;
   }
   .portfolio
   {
-    height: 100%;
-    background-color: lightgoldenrodyellow;
-    margin: 10px;
+    margin: 5px;
+    flex-basis: 19%;
   }
   .portfolio:hover
   {
     cursor: pointer;
     opacity: 0.8;
-    background-color: lightblue;
+    .name
+    {
+      display:block;
+      margin-top:-100px;
+      color: white;
+    }
   }
 }
 
@@ -148,7 +172,7 @@ html
       width: 30px;
       background-color: red;
       position: absolute;
-      z-index: 100;
+      z-index: 1;
     }
     .btn-next
     {
@@ -158,12 +182,12 @@ html
       width: 30px;
       background-color: red;
       position: absolute;
-      z-index: 100;
+      z-index: 1;
     }
     .slider-content
     {
       height: 500px;
-      z-index:1;
+      z-index:100;
       .picture
       {
         float: left;
@@ -241,9 +265,63 @@ html
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
+
+  .input-box
+  {
+    width:500px;
+    border: 2px solid darkgreen;
+  }
 }
 
 .background
 {
   background:darkgreen;
+}
+
+.layer
+{
+  position: fixed;
+  width:100%;
+  height:100%;
+  opacity: 0.9;
+  background-color: rgb(10,0,10);
+  left:0;
+  top:0;
+  display:none;
+  z-index:5;
+
+  &.active {
+    display: block;
+  }
+
+  .content-wrapper
+  {
+    position: relative;
+    margin: 0 auto;
+    width:500px;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .layer-content
+  {
+    margin: 0 auto;
+    background-color: #ffffff;
+    width:100%;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .close-layer
+  {
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    top:0;
+    right:0;
+    cursor: pointer;
+    @include transform(rotate(45deg));
+
+  }
 }

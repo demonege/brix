@@ -49,6 +49,12 @@ class MainpageController extends AbstractActionController
     {
     }
 
+    public function layerAction()
+    {
+        $layer = new ViewModel();
+        $layer->setTerminal(true);
 
+        return $layer;
+    }
 }
 ?>
