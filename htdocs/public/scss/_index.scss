@@ -40,7 +40,7 @@ body
 html
 {
   clear:both;
-  font-family: 'PT Sans Caption', sans-serif;
+  font-family: 'PT Sans Caption', sans-serif !important;
   height: 100%;
 
   h1
@@ -266,10 +266,67 @@ html
   margin-top: 10px;
   position: relative;
 
+  .formular
+  {
+
+  }
+
   .input-box
   {
     width:500px;
-    border: 2px solid darkgreen;
+    height: 20px;
+    background-color: gray;
+    border:none;
+    margin-top: 10px;
+    opacity: 0.5;
+
+  }
+
+  .error
+  {
+    width:500px;
+    height:20px;
+    background-color: red;
+  }
+
+  .description
+  {
+    width:500px;
+    height:150px;
+    border:none;
+    margin-top: 10px;
+    background-color: gray;
+    opacity: 0.5;
+    color:white;
+  }
+
+  .brix-btn
+  {
+    background-color: gray;
+    border:none;
+    margin:5px;
+    padding:10px;
+    font-weight: bold;
+    cursor: pointer;
+    color:#ffffff;
+    text-transform: uppercase;
+  }
+
+  .text-box
+  {
+    width:500px;
+    float:left;
+    margin-left: 20px;
+    h2
+    {
+      text-align: left !important;
+    }
+  }
+
+  .formular-berreich
+  {
+    width:500px;
+    float:left;
   }
 }
 
@@ -322,6 +379,5 @@ html
     right:0;
     cursor: pointer;
     @include transform(rotate(45deg));
-
   }
 }

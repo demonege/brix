@@ -1,3 +1,9 @@
+<?php
+
+    $this->form->setAttribute('action', '/');
+    $this->form->prepare();
+
+?>
 <div class="kontakt">
     <h1>Kontakte</h1>
     <div class="text">
@@ -10,6 +16,27 @@
         </p>
     </div>
     <div class="formular">
-        <input type="text" class="input-box" placeholder="name">
+        <form class="formular-berreich" action="" method="POST">
+            <div class="wrapper">
+                <?php echo $this->formRow($this->form->get('name')); ?>
+            </div>
+            <div class="wrapper">
+                <?php echo $this->formRow($this->form->get('email')); ?>
+            </div>
+            <div class="wrapper">
+                <?php echo $this->formRow($this->form->get('betreff')); ?>
+            </div>
+            <?php echo $this->formRow($this->form->get('beschreibung')); ?>
+            <?php echo $this->formRow($this->form->get('abschicken')); ?>
+        </form>
+        <div class="text-box">
+            <h2>unsere kontaktdaten</h2>
+            <p class="anschrift">
+                öffnungszeiten vom .... bis ....<br>
+                telefonnummer 07696/1337<br>
+                hochdorferstraße 7a<br>
+                79232 march-hugstetten<br>
+            </p>
+        </div>
     </div>
 </div>

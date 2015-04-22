@@ -112,6 +112,41 @@ jQuery(document).ready(function(){
     jQuery('.close-layer').click(function(){
         jQuery('.layer').removeClass('active');
     });
+
+    var regExp = /abcdefghijklmnopqrstuvwxyz/i;
+    //function for ajax validierung
+    jQuery('.brix-btn').click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+       var form = jQuery('.brix-btn').parents();
+       form = form[0];
+       var formelements = jQuery(form).children();
+       jQuery(formelements).each(function(i)
+       {
+           if(jQuery(formelements[i]).hasClass("wrapper"))
+           {
+               var element = formelements[i];
+               jQuery(element).children('.error').remove();
+
+               if(jQuery(element).children('.input-box'))
+               {
+                   var value = jQuery(element).children('.input-box').val();
+                       value = value.replace(/\s+| /gi, '');
+
+                   if (value == '') {
+                       jQuery(element).append("<div class='error'>Ausfüllen!!!</div>");
+                   }
+                   else if(/\d/.test(value)) {
+                       jQuery(element).append("<div class='error'>Machen sachen</div>");
+                   }
+                   else {
+                        alert("passed shit");
+                   }
+               }
+           }
+       });
+
+    });
 });
 
 

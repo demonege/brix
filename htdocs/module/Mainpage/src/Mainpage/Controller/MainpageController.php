@@ -2,6 +2,8 @@
 
 namespace Mainpage\Controller;
 
+use Mainpage\Form\KontaktForm;
+use Mainpage\Model\Kontakt;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -24,14 +26,36 @@ class MainpageController extends AbstractActionController
         $galery = new ViewModel();
         $galery->setTemplate('mainpage/mainpage/galery');
 
+        $kontakt->setVariable('form', $this->getContactForm());
+
         $view->addChild($verkauf, 'verkauf')
              ->addChild($angebot, 'angebot')
              ->addChild($kontakt, 'kontakt')
              ->addChild($galery, 'galery');
 
         return $view;
-
     }
+
+    private function getContactForm()
+    {
+        $form = new KontaktForm();
+        $request = $this->getRequest();
+        if ($request->isPost())
+        {
+            $kontakt = new Kontakt();
+
+            $form->setInputFilter($kontakt->getInputFilter());
+            $form->setData($request->getPost());
+
+//            if($form->isValid())
+//            {
+//                exit('maurice');
+//            }
+        }
+
+        return $form;
+    }
+
     public function verkaufAction()
     {
     }
@@ -47,6 +71,7 @@ class MainpageController extends AbstractActionController
 
     public function kontaktAction()
     {
+
     }
 
     public function layerAction()
