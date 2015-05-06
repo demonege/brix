@@ -282,12 +282,6 @@ html
 
   }
 
-  .error
-  {
-    width:500px;
-    height:20px;
-    background-color: red;
-  }
 
   .description
   {
@@ -298,6 +292,13 @@ html
     background-color: gray;
     opacity: 0.5;
     color:white;
+  }
+
+  .error
+  {
+    width:500px;
+    height:20px;
+    background-color: red;
   }
 
   .brix-btn

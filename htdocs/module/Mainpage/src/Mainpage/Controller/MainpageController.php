@@ -12,6 +12,7 @@ class MainpageController extends AbstractActionController
 
     public function indexAction()
     {
+
         $view = new ViewModel();
 
         $verkauf = new ViewModel();
@@ -46,10 +47,11 @@ class MainpageController extends AbstractActionController
 
             $form->setInputFilter($kontakt->getInputFilter());
             $form->setData($request->getPost());
-
+            $formdata = $request->getPost();
+            $kontakt->validation($formdata);
 //            if($form->isValid())
 //            {
-//                exit('maurice');
+//                die('alles valide');
 //            }
         }
 
