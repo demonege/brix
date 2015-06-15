@@ -116,6 +116,7 @@ jQuery(document).ready(function(){
     //function for ajax validierung
     jQuery('.brix-btn').click(function(e)
     {
+        e.preventDefault();
         var form = jQuery('.brix-btn').parents();
         form = form[0];
         var formelements = jQuery(form).children();
@@ -125,14 +126,18 @@ jQuery(document).ready(function(){
             formdata[i] = jQuery(formelements[i]).children().val();
         });
 
-        jQuery.post('Mainpage/Controller',{formdata: formdata});
-        //jQuery.done(formularValidation(form));
-        formularValidation(formelements);
+        if(formularValidation(formelements))
+        {
+            jQuery(this).unbind('click').submit()
+        }
+
+
 
     });
 
     function formularValidation(formelements)
     {
+        var val = false;
         jQuery(formelements).each(function(i)
         {
             if(jQuery(formelements[i]).hasClass("wrapper"))
@@ -154,7 +159,7 @@ jQuery(document).ready(function(){
                     }
                     else
                     {
-
+                        val = true;
                     }
                 }
 
@@ -170,6 +175,10 @@ jQuery(document).ready(function(){
                     if (value == '') {
                         jQuery(element).append("<div class='error'>Ausfüllen!!!</div>");
                     }
+                    else
+                    {
+                        val = true;
+                    }
                 }
             }
             if(jQuery(formelements[i]).hasClass("email-field"))
@@ -183,9 +192,14 @@ jQuery(document).ready(function(){
                     if (value == '') {
                         jQuery(element).append("<div class='error'>Ausfüllen!!!</div>");
                     }
+                    else
+                    {
+                        val = true;
+                    }
                 }
             }
         });
+        return val;
     }
 });
 
