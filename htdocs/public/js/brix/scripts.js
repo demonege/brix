@@ -39,7 +39,6 @@ jQuery(document).ready(function(){
     });
 
     function changePic(index) {
-        console.log(index);
         var picture = jQuery('.slider-content .wrapper .container').children();
         if(index >=  picture.length)
         {
@@ -201,6 +200,52 @@ jQuery(document).ready(function(){
         });
         return val;
     }
+
+    function kalender()
+    {
+        //kalenderberreich
+        var Datum = new Date();
+        var dayInt = 1;
+        var rows = 5; //reihe tr
+        var cols = 7; //spalte
+
+        var table = jQuery(document.createElement('table'));
+            table.addClass('kalender');
+
+        for (var i = 0; i < rows; i++) {
+            var tr = jQuery(document.createElement('tr'));
+                tr.addClass('trKalender');
+
+            for(var ii = 0; ii < cols; ii++) {
+                var td = jQuery(document.createElement('td'));
+                    td.addClass('tdKalender');
+                    td.attr('id',dayInt);
+                    td.append(dayInt);
+
+                var time = Datum.getFullYear() + '-' + Datum.getMonth() + '-' + dayInt ;
+                if(Datum.getMonth().length = 1)
+                {
+                    var time = Datum.getFullYear() + '-0' + Datum.getMonth() + '-' + dayInt ;
+                }
+
+                if(dayInt < 10)
+                {
+                    var time = Datum.getFullYear() + '-0' + Datum.getMonth() + '-0' + dayInt ;
+                }
+
+                if(!isNaN((new Date(time).getTime()))) {
+                    console.log(time);
+                    tr.append(td);
+                }
+
+                dayInt++;
+            }
+            table.append(tr);
+        }
+        jQuery('.kalenderberreich').append(table);
+    }
+
+    kalender();
 });
 
 

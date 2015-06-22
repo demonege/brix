@@ -27,12 +27,16 @@ class MainpageController extends AbstractActionController
         $galery = new ViewModel();
         $galery->setTemplate('mainpage/mainpage/galery');
 
+        $kalenderberreich = new ViewModel();
+        $kalenderberreich->setTemplate('mainpage/mainpage/kalenderberreich');
+
         $kontakt->setVariable('form', $this->getContactForm());
 
         $view->addChild($verkauf, 'verkauf')
              ->addChild($angebot, 'angebot')
              ->addChild($kontakt, 'kontakt')
-             ->addChild($galery, 'galery');
+             ->addChild($galery, 'galery')
+             ->addChild($kalenderberreich,'kalenderberreich');
 
         return $view;
     }
@@ -70,6 +74,11 @@ class MainpageController extends AbstractActionController
     }
 
     public function kontaktAction()
+    {
+
+    }
+
+    public function kalenderberreichAction()
     {
 
     }

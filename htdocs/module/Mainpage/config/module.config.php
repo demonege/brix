@@ -35,6 +35,7 @@ return array(
             'angebot'           =>__DIR__ . '/../view/mainpage/mainpage/angebot.phtml',
             'galery'            =>__DIR__ . '/../view/mainpage/mainpage/galery.phtml',
             'kontakt'           =>__DIR__ . '/../view/mainpage/mainpage/kontakt.phtml',
+            'kalenderberreich'  =>__DIR__ . '/../view/mainpage/mainpage/kalenderberreich.phtml',
         ),
     ),
 );
