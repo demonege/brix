@@ -201,13 +201,21 @@ jQuery(document).ready(function(){
         return val;
     }
 
-    function kalender()
+    function kalender(Jahr, Monat)
     {
         //kalenderberreich
-        var Datum = new Date();
         var dayInt = 1;
         var rows = 5; //reihe tr
         var cols = 7; //spalte
+        var year = Jahr;
+        var month = Monat;
+
+        console.log(year);
+        console.log(month);
+
+        //löschen des inhalts bei erneuten aufruf
+        jQuery('.month').empty();
+        jQuery('.kalenderberreich').empty();
 
         var table = jQuery(document.createElement('table'));
             table.addClass('kalender');
@@ -222,19 +230,20 @@ jQuery(document).ready(function(){
                     td.attr('id',dayInt);
                     td.append(dayInt);
 
-                var time = Datum.getFullYear() + '-' + Datum.getMonth() + '-' + dayInt ;
-                if(Datum.getMonth().length = 1)
+                var time = year + '-' + month + '-' + dayInt ;
+                if(month.length = 1)
                 {
-                    var time = Datum.getFullYear() + '-0' + Datum.getMonth() + '-' + dayInt ;
+                    var time = year + '-0' + month + '-' + dayInt ;
                 }
 
                 if(dayInt < 10)
                 {
-                    var time = Datum.getFullYear() + '-0' + Datum.getMonth() + '-0' + dayInt ;
+                    var time = year + '-0' + month + '-0' + dayInt ;
                 }
 
+                console.log(new Date(time).getTime());
+
                 if(!isNaN((new Date(time).getTime()))) {
-                    console.log(time);
                     tr.append(td);
                 }
 
@@ -242,10 +251,48 @@ jQuery(document).ready(function(){
             }
             table.append(tr);
         }
+        //erstellen der tabelle
+        jQuery('.month').append(getMonthName(month) + ' ' +year);
         jQuery('.kalenderberreich').append(table);
     }
 
-    kalender();
+    function getMonthName(MonthNumber)
+    {
+        MonthNumber--;
+        var Monate = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']
+        var MonthName = Monate[MonthNumber];
+        return MonthName;
+    }
+    //initinial Kalender beim laden der seite
+    var InitDatum = new Date();
+    var Inityear = InitDatum.getFullYear();
+    var Initmonth = InitDatum.getMonth();
+    Initmonth++;
+    kalender(Inityear, Initmonth);
+
+    //function für as verändern des kalenders
+    var year = InitDatum.getFullYear();
+    var month = InitDatum.getMonth();
+    month++;
+
+    jQuery('.KalenderButton').click(function(){
+        var useid = jQuery('.KalenderButton').attr('id');
+        if(useid == 'next')
+        {
+            month++;
+            if(month > 11)
+            {
+                month = 0;
+                year++;
+            }
+            kalender(year, month);
+        }
+        if(useid == 'last')
+        {
+
+        }
+    });
+
 });
 
 
