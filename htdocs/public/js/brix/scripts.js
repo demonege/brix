@@ -209,9 +209,7 @@ jQuery(document).ready(function(){
         var cols = 7; //spalte
         var year = Jahr;
         var month = Monat;
-
-        console.log(year);
-        console.log(month);
+        var MaxDay = getMaxDay(month,year);
 
         //löschen des inhalts bei erneuten aufruf
         jQuery('.month').empty();
@@ -230,24 +228,17 @@ jQuery(document).ready(function(){
                     td.attr('id',dayInt);
                     td.append(dayInt);
 
-                var time = year + '-' + month + '-' + dayInt ;
-                if(month.length = 1)
+                tr.append(td);
+
+                if(dayInt < MaxDay)
                 {
-                    var time = year + '-0' + month + '-' + dayInt ;
+                    dayInt++;
                 }
-
-                if(dayInt < 10)
+                else
                 {
-                    var time = year + '-0' + month + '-0' + dayInt ;
+                    break;
                 }
 
-                console.log(new Date(time).getTime());
-
-                if(!isNaN((new Date(time).getTime()))) {
-                    tr.append(td);
-                }
-
-                dayInt++;
             }
             table.append(tr);
         }
@@ -258,11 +249,36 @@ jQuery(document).ready(function(){
 
     function getMonthName(MonthNumber)
     {
-        MonthNumber--;
-        var Monate = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember']
+        var Monate = ['','Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
         var MonthName = Monate[MonthNumber];
         return MonthName;
     }
+
+    function getMaxDay(Month, Year)
+    {
+        var Monate = ['',31,getFebDay(Year),31,30,31,30,31,31,30,31,30,31];
+        var MaxDay = Monate[Month];
+        return MaxDay;
+    }
+
+    function getFebDay(Year)
+    {
+        var FebDay = 0;
+        var year = Year;
+
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        {
+            FebDay = 29;
+        }
+        else
+        {
+            FebDay = 28;
+        }
+
+        return FebDay;
+
+    }
+
     //initinial Kalender beim laden der seite
     var InitDatum = new Date();
     var Inityear = InitDatum.getFullYear();
@@ -275,25 +291,51 @@ jQuery(document).ready(function(){
     var month = InitDatum.getMonth();
     month++;
 
-    jQuery('.KalenderButton').click(function(){
-        var useid = jQuery('.KalenderButton').attr('id');
+    jQuery('.KalenderButtonNext').click(function(){
+        var useid = jQuery('.KalenderButtonNext').attr('id');
+        NextOrLast(useid);
+    });
+
+    jQuery('.KalenderButtonLast').click(function(){
+        var useid = jQuery('.KalenderButtonLast').attr('id');
+        NextOrLast(useid);
+    });
+
+    function NextOrLast(divId)
+    {
+        console.log(divId);
+        var useid = divId;
+
         if(useid == 'next')
         {
             month++;
-            if(month > 11)
+            if(month > 12)
             {
-                month = 0;
+                month = 1;
                 year++;
             }
             kalender(year, month);
         }
         if(useid == 'last')
         {
-
+            month--;
+            if(month < 1)
+            {
+                month = 12;
+                year--;
+            }
+            kalender(year, month);
         }
+
+    }
+
+    //Speicherung der ereignisse für kalender
+    jQuery('.saveBtn').click(function() {
+        jQuery.post('mainpage/kalenderSave').done(function (data) {
+            jQuery('.formularLayer .layer-content').html(data);
+            jQuery('.formularLayer').addClass('active');
+        });
     });
 
+
 });
-
-
-

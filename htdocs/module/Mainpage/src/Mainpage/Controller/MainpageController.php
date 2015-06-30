@@ -90,5 +90,13 @@ class MainpageController extends AbstractActionController
 
         return $layer;
     }
+
+    public function kalenderSaveAction()
+    {
+        $kalenderSave = new ViewModel();
+        $kalenderSave->setTerminal(true);
+
+        return $kalenderSave;
+    }
 }
 ?>
