@@ -51,6 +51,14 @@ class KontaktForm extends Form
                 'class' => 'brix-btn',
             ),
         ));
+
+        $this->add(array(
+            'name' => 'datum',
+            'attributes' => array(
+                'value' => 'dd-mm-yyyy',
+                'class' => 'input-box',
+            ),
+        ));
     }
 }
 

@@ -110,6 +110,7 @@ jQuery(document).ready(function(){
     //function for close layer
     jQuery('.close-layer').click(function(){
         jQuery('.layer').removeClass('active');
+        jQuery('.formularLayer').removeClass('active');
     });
 
     //function for ajax validierung
@@ -331,7 +332,7 @@ jQuery(document).ready(function(){
 
     //Speicherung der ereignisse für kalender
     jQuery('.saveBtn').click(function() {
-        jQuery.post('mainpage/kalenderSave').done(function (data) {
+        jQuery.post('kalendersave', function (data) {
             jQuery('.formularLayer .layer-content').html(data);
             jQuery('.formularLayer').addClass('active');
         });

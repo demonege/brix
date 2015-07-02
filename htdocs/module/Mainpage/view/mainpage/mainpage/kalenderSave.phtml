@@ -1,1 +1,16 @@
-<h1>Formularberreich für ereignisse</h1>
+<?php
+
+$this->form->setAttribute('action', '/');
+$this->form->prepare();
+
+?>
+
+<h1>Tragen sie das datum und eine beschreibung für das ereigniss ein</h1>
+
+<div class="formular">
+    <form class="formular-berreich" action="" method="POST">
+        <div class="wrapper">
+            <?php echo $this->formRow($this->form->get('name')); ?>
+        </div>
+    </form>
+</div>
