@@ -4,6 +4,8 @@ namespace Mainpage\Controller;
 
 use Mainpage\Form\KontaktForm;
 use Mainpage\Model\Kontakt;
+use Mainpage\Model\Calender;
+use Mainpage\Form\CalenderForm;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -48,8 +50,25 @@ class MainpageController extends AbstractActionController
         if ($request->isPost())
         {
             $kontakt = new Kontakt();
-
             $form->setInputFilter($kontakt->getInputFilter());
+            $form->setData($request->getPost());
+            if($form->isValid())
+            {
+                die('alles valide');
+            }
+        }
+
+        return $form;
+    }
+
+    private function getCalenderForm()
+    {
+        $form = new CalenderForm();
+        $request = $this->getRequest();
+        if ($request->isPost())
+        {
+            $kalender = new Calender();
+            $form->setInputFilter($kalender->getInputFilter());
             $form->setData($request->getPost());
             if($form->isValid())
             {
@@ -95,7 +114,7 @@ class MainpageController extends AbstractActionController
     {
         $kalenderSave = new ViewModel();
         $kalenderSave->setTerminal(true);
-
+        $kalenderSave->setVariable('form', $this->getCalenderForm());
         return $kalenderSave;
     }
 }

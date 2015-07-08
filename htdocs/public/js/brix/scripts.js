@@ -332,10 +332,16 @@ jQuery(document).ready(function(){
 
     //Speicherung der ereignisse für kalender
     jQuery('.saveBtn').click(function() {
-        jQuery.post('kalendersave', function (data) {
+        jQuery.get('kalendersave', function (data) {
             jQuery('.formularLayer .layer-content').html(data);
             jQuery('.formularLayer').addClass('active');
         });
+    });
+
+    jQuery('.brix-btn').click(function(e)
+    {
+      e.preventDefault();
+      jQuery.post('kalendersave');
     });
 
 

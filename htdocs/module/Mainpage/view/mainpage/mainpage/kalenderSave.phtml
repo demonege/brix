@@ -1,7 +1,7 @@
 <?php
 
-$this->form->setAttribute('action', '/');
-$this->form->prepare();
+//$this->form->setAttribute('action', '/');
+//$this->form->prepare();
 
 ?>
 
@@ -12,5 +12,9 @@ $this->form->prepare();
         <div class="wrapper">
             <?php echo $this->formRow($this->form->get('name')); ?>
         </div>
+        <div class="wrapper">
+            <?php echo $this->formRow($this->form->get('datum')); ?>
+        </div>
+        <?php echo $this->formRow($this->form->get('abschicken')); ?>
     </form>
 </div>

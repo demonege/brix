@@ -116,12 +116,12 @@ class Kontakt implements InputFilterAwareInterface
                             'message' => 'Die angebene email adresse ist fehlerhaft bitte korrigieren',
                         ),
                     ),
-                ),
-                array(
-                    'name' => 'NotEmpty',
-                    'options' => array(
-                        'messages' => array(
-                            \Zend\Validator\NotEmpty::IS_EMPTY => 'Bitte ausfüllen',
+                    array(
+                        'name' => 'NotEmpty',
+                        'options' => array(
+                            'messages' => array(
+                                \Zend\Validator\NotEmpty::IS_EMPTY => 'Bitte ausfüllen',
+                            ),
                         ),
                     ),
                 ),
@@ -157,6 +157,7 @@ class Kontakt implements InputFilterAwareInterface
                     ),
                 ),
             )));
+
             $this->inputFilter = $inputFilter;
         }
         return $this->inputFilter;
