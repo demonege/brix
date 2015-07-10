@@ -6,8 +6,10 @@ use Mainpage\Form\KontaktForm;
 use Mainpage\Model\Kontakt;
 use Mainpage\Model\Calender;
 use Mainpage\Form\CalenderForm;
+use Mainpage\Model\SendMail;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Mail\Transport\Sendmail as SendmailTransport;
 
 class MainpageController extends AbstractActionController
 {
@@ -54,7 +56,10 @@ class MainpageController extends AbstractActionController
             $form->setData($request->getPost());
             if($form->isValid())
             {
-                die('alles valide');
+                $emailfields = $this->getRequest()->getPost();
+                $message = new SendMail($emailfields);
+                $transport = new SendmailTransport();
+                $transport->send($message);
             }
         }
 
@@ -72,7 +77,7 @@ class MainpageController extends AbstractActionController
             $form->setData($request->getPost());
             if($form->isValid())
             {
-                die('alles valide');
+
             }
         }
 
