@@ -9,8 +9,18 @@ class CalenderData
 {
     public function __construct($fieldData)
     {
+        $table = 'kalenderereignisse';
         $timestamp = $this->createdTimestamp($fieldData['datum']);
+        $Database = new Database();
+        $DatabseAdapter = $Database->DatabaseConection();
 
+        $values = array(
+            'ID'        =>      '',
+            'CONTENT'   =>      $fieldData['name'],
+            'DATE'      =>      $timestamp
+        );
+
+        $Database->inserInto($DatabseAdapter,$values,$table);
 
     }
 
