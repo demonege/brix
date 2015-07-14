@@ -7,9 +7,9 @@ use Mainpage\Model\Kontakt;
 use Mainpage\Model\Calender;
 use Mainpage\Form\CalenderForm;
 use Mainpage\Model\SendMail;
+use Mainpage\Model\CalenderData;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Zend\Mail\Transport\Sendmail as SendmailTransport;
 
 class MainpageController extends AbstractActionController
 {
@@ -47,6 +47,7 @@ class MainpageController extends AbstractActionController
 
     private function getContactForm()
     {
+
         $form = new KontaktForm();
         $request = $this->getRequest();
         if ($request->isPost())
@@ -58,8 +59,6 @@ class MainpageController extends AbstractActionController
             {
                 $emailfields = $this->getRequest()->getPost();
                 $message = new SendMail($emailfields);
-                $transport = new SendmailTransport();
-                $transport->send($message);
             }
         }
 
@@ -77,10 +76,10 @@ class MainpageController extends AbstractActionController
             $form->setData($request->getPost());
             if($form->isValid())
             {
-
+                $fieldData = $this->getRequest()->getPost();
+                $Data = new CalenderData($fieldData);
             }
         }
-
         return $form;
     }
 

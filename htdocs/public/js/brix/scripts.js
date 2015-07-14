@@ -338,11 +338,11 @@ jQuery(document).ready(function(){
         });
     });
 
-    jQuery('.brix-btn').click(function(e)
-    {
-      e.preventDefault();
-      jQuery.post('kalendersave');
-    });
+    //jQuery('.brix-btn').click(function(e)
+    //{
+    //  e.preventDefault();
+    //  jQuery.post('kalendersave');
+    //});
 
 
 });

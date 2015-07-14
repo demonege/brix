@@ -3,6 +3,7 @@
 namespace Mainpage\Model;
 
 use Zend\Mail\Message;
+use Zend\Mail\Transport\Sendmail as SendmailTransport;
 
 class SendMail
 {
@@ -19,7 +20,8 @@ class SendMail
             ->setSubject("Eine Neue kontakt anfrage");
         $message->setBody($this->getEmailBody($emailfields));
 
-        return $message;
+        $transport = new SendmailTransport();
+        $transport->send($message);
     }
 
     public function getEmailBody($emailfields)

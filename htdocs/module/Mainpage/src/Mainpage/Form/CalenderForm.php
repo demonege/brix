@@ -24,14 +24,14 @@ class CalenderForm extends Form
             'type' => 'submit',
             'attributes' => array(
                 'value' => 'abschicken',
-                'class' => 'brix-btn',
+                'class' => 'save-btn',
             ),
         ));
 
         $this->add(array(
             'name' => 'datum',
             'attributes' => array(
-                'placeholder' => 'dd-mm-yyyy',
+                'placeholder' => 'dd.mm.yyyy',
                 'class' => 'input-box',
             ),
         ));

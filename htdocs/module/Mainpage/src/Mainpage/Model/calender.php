@@ -78,7 +78,7 @@ class Calender implements InputFilterAwareInterface
                     array(
                         'name'    => 'Date',
                         'options' => array(
-                            'format' =>'dd.mm.YYYY',
+                            'format' =>'d.m.Y',
                             'message' => array(
                                 \Zend\Validator\Date::INVALID_DATE => 'fehlerhaftes datum bitte korregieren',
                                 \Zend\Validator\Date::FALSEFORMAT => 'fehlerhaftes Format bitte Korregieren z.b 01.01.1994',
