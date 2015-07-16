@@ -335,14 +335,13 @@ jQuery(document).ready(function(){
         jQuery.get('kalendersave', function (data) {
             jQuery('.formularLayer .layer-content').html(data);
             jQuery('.formularLayer').addClass('active');
+
+            jQuery('.formular-berreich').on('submit', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                console.log(e);
+                jQuery.post('kalendersave');
+            });
         });
     });
-
-    //jQuery('.brix-btn').click(function(e)
-    //{
-    //  e.preventDefault();
-    //  jQuery.post('kalendersave');
-    //});
-
-
 });
