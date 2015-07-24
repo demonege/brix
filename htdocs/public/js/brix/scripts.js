@@ -229,6 +229,10 @@ jQuery(document).ready(function(){
                     td.attr('id',dayInt);
                     td.append(dayInt);
 
+                //Datum zusammen setzten
+                var checkDate = getCheckDate(dayInt,month,year);
+                checkDateEvent(checkDate);
+
                 tr.append(td);
 
                 if(dayInt < MaxDay)
@@ -278,6 +282,27 @@ jQuery(document).ready(function(){
 
         return FebDay;
 
+    }
+
+    function getCheckDate(day,month,year)
+    {
+        if(day <= 9)
+        {
+            day = '0' + day;
+        }
+        if(month <= 9)
+        {
+            month = '0' + month;
+        }
+        var checkDate = day +'.'+ month +'.'+ year;
+
+        return checkDate;
+    }
+
+    //Function for checking events on current day
+    function checkDateEvent(checkDate)
+    {
+        jQuery.post('kalenderevent',{0:checkDate});
     }
 
     //initinial Kalender beim laden der seite
@@ -336,11 +361,10 @@ jQuery(document).ready(function(){
             jQuery('.formularLayer .layer-content').html(data);
             jQuery('.formularLayer').addClass('active');
 
-            jQuery('.formular-berreich').on('submit', function(e){
-                e.preventDefault();
-                e.stopPropagation();
-                console.log(e);
-                jQuery.post('kalendersave');
+            var formdata = jQuery('.formular-berreich input');
+
+            jQuery('.formular-berreich').on('submit', function(){
+                jQuery.post('kalendersave',{name: jQuery(formdata[0]).val(),datum: jQuery(formdata[1]).val()})
             });
         });
     });

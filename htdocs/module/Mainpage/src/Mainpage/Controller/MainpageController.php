@@ -8,6 +8,7 @@ use Mainpage\Model\Calender;
 use Mainpage\Form\CalenderForm;
 use Mainpage\Model\SendMail;
 use Mainpage\Model\CalenderData;
+use Mainpage\Model\Event;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -120,6 +121,13 @@ class MainpageController extends AbstractActionController
         $kalenderSave->setTerminal(true);
         $kalenderSave->setVariable('form', $this->getCalenderForm());
         return $kalenderSave;
+    }
+
+    public function kalenderEventAction()
+    {
+        $data = $this->getRequest()->getPost();
+        $event = new Event($data[0]);
+        return $event;
     }
 }
 ?>
