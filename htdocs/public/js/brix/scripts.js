@@ -231,7 +231,9 @@ jQuery(document).ready(function(){
 
                 //Datum zusammen setzten
                 var checkDate = getCheckDate(dayInt,month,year);
-                checkDateEvent(checkDate);
+                var test = checkDateEvent(checkDate);
+
+                console.log(test);
 
                 tr.append(td);
 
@@ -302,7 +304,9 @@ jQuery(document).ready(function(){
     //Function for checking events on current day
     function checkDateEvent(checkDate)
     {
-        jQuery.post('kalenderevent',{0:checkDate});
+        jQuery.post('kalenderevent',{0:checkDate}).done(function(data){
+            return data;
+        });
     }
 
     //initinial Kalender beim laden der seite

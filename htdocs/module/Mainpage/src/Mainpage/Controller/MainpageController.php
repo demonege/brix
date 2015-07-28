@@ -72,7 +72,7 @@ class MainpageController extends AbstractActionController
         $request = $this->getRequest();
         if ($request->isPost())
         {
-            $kalender = new calender();
+            $kalender = new Calender();
             $form->setInputFilter($kalender->getInputFilter());
             $form->setData($request->getPost());
             if($form->isValid())
@@ -127,6 +127,7 @@ class MainpageController extends AbstractActionController
     {
         $data = $this->getRequest()->getPost();
         $event = new Event($data[0]);
+        die(print_r($event));
         return $event;
     }
 }
