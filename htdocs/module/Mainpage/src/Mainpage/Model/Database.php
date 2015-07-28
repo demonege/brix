@@ -4,8 +4,7 @@ namespace Mainpage\Model;
 
 use \Zend\Db\Adapter\Adapter,
     \Zend\Db\TableGateway\TableGateway,
-    \Zend\Db\Sql\Sql,
-    \Zend\Db\Sql\Select;
+    \Zend\Db\Sql\Sql;
 
 class Database
 {
@@ -16,7 +15,7 @@ class Database
             'database' => 'brix',
             'username' => 'root',
             'hostname' => 'localhost',
-            'password' => ''
+            'password' => '',
         ));
 
         return $adapter;
@@ -31,20 +30,16 @@ class Database
 
     public function select($table,$DatabaseAdapter,$where)
     {
-        $sql = new Sql($DatabaseAdapter,$table);
+        $sql = new Sql($DatabaseAdapter);
         $select = $sql->select();
-        $select->where(array('DATE' => '1437688800'));
+        $select->from($table);
+        $select->where(array('DATE' => '1437948000'));
 
-        $selectString = $sql->getSqlStringForSqlObject($select);
+        $selectString = $select->getSqlString();
 
-//        $results = $DatabaseAdapter->query($selectString, $DatabaseAdapter::QUERY_MODE_EXECUTE);
+        //$results = $DatabaseAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
 
-
-        $statement = $DatabaseAdapter->createStatement();
-        $select->prepareStatement($DatabaseAdapter, $statement);
-        $statement->execute();
-
-        die(print_r($statement->getResource()));
+        die(print_r($selectString));
     }
 
 }
