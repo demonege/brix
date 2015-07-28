@@ -33,13 +33,15 @@ class Database
         $sql = new Sql($DatabaseAdapter);
         $select = $sql->select();
         $select->from($table);
-        $select->where(array('DATE' => '1437948000'));
+        $select->where($where);
 
         $selectString = $select->getSqlString();
 
-        //$results = $DatabaseAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
+        $escapeSelectString = str_replace('"', '', $selectString);
 
-        die(print_r($selectString));
+        $results = $DatabaseAdapter->query($escapeSelectString, Adapter::QUERY_MODE_EXECUTE);
+
+        die(print_r($results->toArray()));
     }
 
 }
