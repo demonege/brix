@@ -41,7 +41,10 @@ class Database
 
         $results = $DatabaseAdapter->query($escapeSelectString, Adapter::QUERY_MODE_EXECUTE);
 
-        die(print_r($results->toArray()));
+        $data = $results->toArray();
+
+        return $data;
+
     }
 
 }

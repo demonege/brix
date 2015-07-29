@@ -1,3 +1,5 @@
+var testdata = 1;
+
 jQuery(document).ready(function(){
     //test js
     function ScriptTest(){
@@ -231,9 +233,10 @@ jQuery(document).ready(function(){
 
                 //Datum zusammen setzten
                 var checkDate = getCheckDate(dayInt,month,year);
-                var test = checkDateEvent(checkDate);
+                checkDateEvent(checkDate);
 
-                console.log(test);
+                console.log(testdata);
+
 
                 tr.append(td);
 
@@ -304,10 +307,18 @@ jQuery(document).ready(function(){
     //Function for checking events on current day
     function checkDateEvent(checkDate)
     {
-        jQuery.post('kalenderevent',{0:checkDate}).done(function(data){
-            return data;
+        jQuery.post('kalenderevent', {0:checkDate}, function(data) {
+           resultJsonData = JSON.parse(data);
+           testdata = resultJsonData;
         });
     }
+
+    function setdata(resultJsonData)
+    {
+        testdata = resultJsonData;
+    }
+
+
 
     //initinial Kalender beim laden der seite
     var InitDatum = new Date();

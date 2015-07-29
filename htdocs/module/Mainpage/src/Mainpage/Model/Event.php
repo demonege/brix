@@ -7,6 +7,8 @@ use Mainpage\Model\Database;
 
 class Event
 {
+    public $test = array();
+
     public function __construct($date)
     {
         //database connection
@@ -19,7 +21,8 @@ class Event
         );
         $table = 'kalenderereignisse';
 
-        return $Database->select($table,$DatabaseAdapter,$where);
+        $GLOBALS['$test'] =  $Database->select($table,$DatabaseAdapter,$where);
+
     }
 
     public function createdTimestamp($date)
@@ -28,6 +31,11 @@ class Event
         $timestamp = strtotime($date);
 
         return $timestamp;
+    }
+
+    public function getSelect()
+    {
+        return $GLOBALS['$test'];
     }
 }
 
