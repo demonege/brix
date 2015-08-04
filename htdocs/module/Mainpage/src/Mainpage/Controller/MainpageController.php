@@ -125,11 +125,10 @@ class MainpageController extends AbstractActionController
 
     public function kalenderEventAction()
     {
-
         $data = $this->getRequest()->getPost();
         $event = new Event($data[0]);
         $resulte = $event->getSelect();
-        $jsonData = json_encode($resulte[0]);
+        $jsonData = json_encode($resulte);
 
         if ($jsonData) {
             echo $jsonData;

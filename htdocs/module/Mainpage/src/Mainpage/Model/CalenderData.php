@@ -27,7 +27,7 @@ class CalenderData
     public function createdTimestamp($date)
     {
         $date = str_replace('.','-',$date);
-        $timestamp = strtotime($date);
+        $timestamp = strtotime($date.' GMT');
 
         return $timestamp;
     }

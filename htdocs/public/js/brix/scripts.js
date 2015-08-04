@@ -1,5 +1,3 @@
-var testdata = 1;
-
 jQuery(document).ready(function(){
     //test js
     function ScriptTest(){
@@ -228,15 +226,13 @@ jQuery(document).ready(function(){
             for(var ii = 0; ii < cols; ii++) {
                 var td = jQuery(document.createElement('td'));
                     td.addClass('tdKalender');
-                    td.attr('id',dayInt);
                     td.append(dayInt);
 
                 //Datum zusammen setzten
                 var checkDate = getCheckDate(dayInt,month,year);
-                checkDateEvent(checkDate);
-
-                console.log(testdata);
-
+                var date = new Date(checkDate +'GMT');
+                var dateId = date.getTime() / 1000;
+                td.attr('id',dateId);
 
                 tr.append(td);
 
@@ -299,7 +295,8 @@ jQuery(document).ready(function(){
         {
             month = '0' + month;
         }
-        var checkDate = day +'.'+ month +'.'+ year;
+
+        var checkDate = year +'-'+ month +'-'+ day;
 
         return checkDate;
     }
@@ -309,16 +306,9 @@ jQuery(document).ready(function(){
     {
         jQuery.post('kalenderevent', {0:checkDate}, function(data) {
            resultJsonData = JSON.parse(data);
-           testdata = resultJsonData;
+           console.log(resultJsonData);
         });
     }
-
-    function setdata(resultJsonData)
-    {
-        testdata = resultJsonData;
-    }
-
-
 
     //initinial Kalender beim laden der seite
     var InitDatum = new Date();
@@ -344,7 +334,6 @@ jQuery(document).ready(function(){
 
     function NextOrLast(divId)
     {
-        console.log(divId);
         var useid = divId;
 
         if(useid == 'next')
@@ -369,6 +358,15 @@ jQuery(document).ready(function(){
         }
 
     }
+
+    var tdObjecte = jQuery('.tdKalender');
+    var tdId = [];
+    var i = 0;
+    jQuery(tdObjecte).each(function(){
+        tdId[i] = jQuery(tdObjecte[i]).attr('id');
+        i++;
+    });
+    checkDateEvent(tdId);
 
     //Speicherung der ereignisse für kalender
     jQuery('.saveBtn').click(function() {

@@ -7,7 +7,7 @@ use Mainpage\Model\Database;
 
 class Event
 {
-    public $test = array();
+    public $data = array();
 
     public function __construct($date)
     {
@@ -15,27 +15,21 @@ class Event
         $Database = new Database();
         $DatabaseAdapter = $Database->DatabaseConection();
 
-        $timestamp = $this->createdTimestamp($date);
-        $where = array(
-            'DATE' => $timestamp
-        );
-        $table = 'kalenderereignisse';
 
-        $GLOBALS['$test'] =  $Database->select($table,$DatabaseAdapter,$where);
+        for($i=0;$i < count($date);$i++)
+        {
+            $where = array(
+            'DATE' => $date[$i]
+            );
 
-    }
-
-    public function createdTimestamp($date)
-    {
-        $date = str_replace('.','-',$date);
-        $timestamp = strtotime($date);
-
-        return $timestamp;
+            $table = 'kalenderereignisse';
+            $this->data[$i] = $Database->select($table,$DatabaseAdapter,$where);
+        }
     }
 
     public function getSelect()
     {
-        return $GLOBALS['$test'];
+        return $this->data;
     }
 }
 
