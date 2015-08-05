@@ -306,7 +306,7 @@ jQuery(document).ready(function(){
     {
         jQuery.post('kalenderevent', {0:checkDate}, function(data) {
            resultJsonData = JSON.parse(data);
-           console.log(resultJsonData);
+           addEventToKalender(resultJsonData);
         });
     }
 
@@ -367,6 +367,38 @@ jQuery(document).ready(function(){
         i++;
     });
     checkDateEvent(tdId);
+
+    function addEventToKalender(data)
+    {
+        var dataArray   = [];
+        var dataContent = [];
+
+        for(i=0; i < data.length; i++)
+        {
+            if(data[i].length != 0)
+            {
+                dataArray[i] = data[i][0]['DATE'];
+                dataContent[i] = data[i][0]['CONTENT'];
+            }
+        }
+
+        var tdObjecte = jQuery('.tdKalender');
+        var tdId = [];
+        var i = 0;
+
+        for(i=0;i<tdObjecte.length;i++)
+        {
+            var kalenderId = jQuery(tdObjecte[i]).attr('id');
+
+            for(ii=0;ii < dataArray.length;ii++)
+            {
+               if(kalenderId == dataArray[ii])
+               {
+                   jQuery(tdObjecte[i]).append('<div>' + dataContent[i] + '</div>');
+               }
+            }
+        }
+    }
 
     //Speicherung der ereignisse für kalender
     jQuery('.saveBtn').click(function() {
