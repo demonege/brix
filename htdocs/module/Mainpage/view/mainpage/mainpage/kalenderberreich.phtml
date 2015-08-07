@@ -5,6 +5,9 @@
     <div class="KalenderButtonLast" id="last"></div>
 </div>
 <div class="kalenderberreich"></div>
-<button class="saveBtn">Termin Eintragen</button>
+<?php if($this->serverUrl(true) != $_SERVER['HTTP_HOST']) : ?>
+	<?php echo ($this->serverUrl(true) .' ----- '. $_SERVER['HTTP_HOST']) ?>
+	<button class="saveBtn">Termin Eintragen</button>
+<?php endif ?>
 
 
