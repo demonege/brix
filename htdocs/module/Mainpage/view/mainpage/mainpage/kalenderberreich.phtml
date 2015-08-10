@@ -1,12 +1,11 @@
-<div class="Kalender">
+<div id="kalender" class="Kalender">
     <h1>kalenderberreich</h1>
     <p class="month"></p>
     <div class="KalenderButtonNext" id="next"></div>
     <div class="KalenderButtonLast" id="last"></div>
 </div>
 <div class="kalenderberreich"></div>
-<?php if($this->serverUrl(true) != $_SERVER['HTTP_HOST']) : ?>
-	<?php echo ($this->serverUrl(true) .' ----- '. $_SERVER['HTTP_HOST']) ?>
+<?php if(parse_url($this->serverUrl(true), PHP_URL_PATH) == '/kalenderberreich') : ?>
 	<button class="saveBtn">Termin Eintragen</button>
 <?php endif ?>
 
