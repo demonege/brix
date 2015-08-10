@@ -11,7 +11,7 @@ return array(
             'mainpage' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/mainpage[/:action][/:id]',
+                    'route'    => '[/:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
@@ -27,15 +27,15 @@ return array(
 
     'view_manager' => array(
         'template_path_stack' => array(
-            'mainpage' => __DIR__ . '/../view',
+            '/' => __DIR__ . '/../view',
         ),
         'template_map' => array(
             'layout/layout'     => __DIR__ . '/../view/layout/layout.phtml',
-            'verkauf'           => __DIR__ . '/../view/mainpage/mainpage/verkauf.phtml',
-            'angebot'           =>__DIR__ . '/../view/mainpage/mainpage/angebot.phtml',
-            'galery'            =>__DIR__ . '/../view/mainpage/mainpage/galery.phtml',
-            'kontakt'           =>__DIR__ . '/../view/mainpage/mainpage/kontakt.phtml',
-            'kalenderberreich'  =>__DIR__ . '/../view/mainpage/mainpage/kalenderberreich.phtml',
+            'verkauf'           => __DIR__ . '/../view/mainpage/verkauf.phtml',
+            'angebot'           =>__DIR__ . '/../view/mainpage/angebot.phtml',
+            'galery'            =>__DIR__ . '/../view/mainpage/galery.phtml',
+            'kontakt'           =>__DIR__ . '/../view/mainpage/kontakt.phtml',
+            'kalenderberreich'  =>__DIR__ . '/../view/mainpage/kalenderberreich.phtml',
         ),
     ),
 );
