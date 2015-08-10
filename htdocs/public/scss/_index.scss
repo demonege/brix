@@ -1,34 +1,51 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/fonts/icomoon.eot?-rktn7u');
+	src:url('../fonts/icomoon/fonts/icomoon.eot?#iefix-rktn7u') format('embedded-opentype'),
+		url('../fonts/icomoon/fonts/icomoon.ttf?-rktn7u') format('truetype'),
+		url('../fonts/icomoon/fonts/icomoon.woff?-rktn7u') format('woff'),
+		url('../fonts/icomoon/fonts/icomoon.svg?-rktn7u#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 .navi
 {
-  background: limegreen;
-  height: 60px;
+  background: #27ae60;
+  height: 100px;
   width: 100%;
   .logo
   {
-    position: absolute;
-    background:forestgreen;
-    height: 60px;
-    width:60px;
+	position: absolute;
+	height: 100px;
+	width:80px;
+	background-color: white;
+	img
+	{
+	  width:100%;
+	  height: 100%;
+	}
   }
   ul
   {
-    margin-left: 40%;
-    li
-    {
-      float: left;
-      margin-left: 10%;
-      margin-top: 3%;
-      text-align: center;
-      a
-      {
-        color:#000000;
-        text-decoration: none;
-      }
-      a:hover
-      {
-        color:#ffffff;
-      }
-    }
+	margin-left: 40%;
+	li
+	{
+	  float: left;
+	  margin-left: 10%;
+	  margin-top: 3%;
+	  text-align: center;
+	  a
+	  {
+		color:#000000;
+		text-decoration: none;
+	  }
+	  a:hover
+	  {
+		color:#ffffff;
+	  }
+	}
   }
 }
 
@@ -39,21 +56,21 @@ body
 
 html
 {
+  background:#27ae60;
   clear:both;
-  font-family: 'PT Sans Caption', sans-serif !important;
   height: 100%;
 
   h1
   {
-    text-align: center;
-    font-size: 23px;
-    color:red;
+	text-align: center;
+	font-size: 30px;
+	color:#8e44ad;
   }
   h2
   {
-    text-align: center;
-    font-size: 18px;
-    color:blue;
+	text-align: center;
+	font-size: 25px;
+	color:#8e44ad;
   }
 }
 
@@ -61,7 +78,7 @@ html
 {
   width: 100%;
   height:100%;
-  background-color: #ffffff;
+  background-color: #27ae60;
   margin-top: 10px;
   position: relative;
 }
@@ -69,199 +86,296 @@ html
 .verkauf
 {
   height:100%;
-  background-color: #ffffff;
+  background-color: #27ae60;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
-  background-color: greenyellow;
 
   .brix-btn
   {
-    background-color: darkgreen;
-    border:none;
-    margin:5px;
-    padding:10px;
-    font-weight: bold;
-    cursor: pointer;
-    color:#ffffff;
-    text-transform: uppercase;
+	background-color: darkgreen;
+	border:none;
+	margin:5px;
+	padding:10px;
+	font-weight: bold;
+	cursor: pointer;
+	color:#ffffff;
+	text-transform: uppercase;
   }
   .brix-btn:hover
   {
-    background-color: #ffffff;
-    border-color:darkgreen;
-    color:darkgreen;
+	background-color: #ffffff;
+	border-color:darkgreen;
+	color:darkgreen;
   }
 
   .row
   {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
   }
   .name
   {
-    display:none;
+	display:none;
   }
   .winterhart
   {
-    dislay:block;
+	dislay:block;
   }
   .pflegeleicht
   {
-    dislay:block;
+	dislay:block;
   }
   .wenig_licht
   {
-    dislay:block;
+	dislay:block;
   }
   .wenig_wasser
   {
-    dislay:block;
+	dislay:block;
   }
   .portfolio
   {
-    margin: 5px;
-    flex-basis: 19%;
+	margin: 5px;
+	flex-basis: 19%;
   }
   .portfolio:hover
   {
-    cursor: pointer;
-    opacity: 0.8;
-    .name
-    {
-      display:block;
-      margin-top:-100px;
-      color: white;
-    }
+	cursor: pointer;
+	opacity: 0.8;
+	.name
+	{
+	  display:block;
+	  margin-top:-100px;
+	  color: white;
+	}
   }
 }
 
 .bilder-galary
 {
   height:100%;
-  background-color: #ffffff;
+  background-color: #27ae60;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
   .slider
   {
-    text-align: center;
-    position: relative;
-    height: 500px;
-    overflow: hidden;
+	text-align: center;
+	position: relative;
+	height: 500px;
+	overflow: hidden;
 
-    .wrapper
-    {
-      overflow: hidden;
-      width:100%;
+	.wrapper
+	{
+	  overflow: hidden;
+	  width:100%;
 
-      .container
-      {
-        height: 500px;
-        @include transition(transform 0.5s);
-      }
-    }
+	  .container
+	  {
+		height: 500px;
+		@include transition(transform 0.5s);
+	  }
+	}
 
 
-    .btn-back
-    {
-      left:0px;
-      top:50%;
-      height: 30px;
-      width: 30px;
-      background-color: red;
-      position: absolute;
-      z-index: 1;
-    }
-    .btn-next
-    {
-      right:0px;
-      top:50%;
-      height: 30px;
-      width: 30px;
-      background-color: red;
-      position: absolute;
-      z-index: 1;
-    }
-    .slider-content
-    {
-      height: 500px;
-      z-index:100;
-      .picture
-      {
-        float: left;
-        width:10%;
-        height:500px;
-        width: 100%;
-        &#pic-1{background-color: midnightblue;}
-        &#pic-2{background-color: darkmagenta;}
-        &#pic-3{background-color: aquamarine;}
-        &#pic-4{background-color: chocolate;}
-      }
-      .picture.show
-      {
-      }
-    }
+	.btn-back
+	{
+	  left:0px;
+	  top:50%;
+	  height: 30px;
+	  width: 30px;
+	  position: absolute;
+	  z-index: 1;
+
+	  &:before {
+	  	font-family: 'icomoon';
+	  	content:"\e600";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	right:0;
+	  	font-size: 30px;
+	  	@include transform(rotate(180deg));
+	  }
+	}
+	.btn-next
+	{
+	  right:0px;
+	  top:50%;
+	  height: 30px;
+	  width: 30px;
+	  color:black;
+	  position: absolute;
+	  z-index: 1;
+
+	  &:before {
+	  	font-family: 'icomoon';
+	  	content:"\e600";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	left:0;
+	  	font-size: 30px;
+	  }
+	}
+	.slider-content
+	{
+	  height: 500px;
+	  z-index:100;
+	  .picture
+	  {
+		float: left;
+		width:10%;
+		height:500px;
+		width: 100%;
+		&#pic-1{background-color: midnightblue;}
+		&#pic-2{background-color: darkmagenta;}
+		&#pic-3{background-color: aquamarine;}
+		&#pic-4{background-color: chocolate;}
+	  }
+	  .picture.show
+	  {
+	  }
+	}
   }
 }
 
 .angebot
 {
   height:100%;
-  background-color: #ffffff;
+  background-color: #27ae60;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
   table
   {
-    width:100%;
-    height:500px;
-    tr
-    {
-      td
-      {
-        border:2px solid grey;
-      }
-    }
+	width:100%;
+	height:500px;
+	tr
+	{
+	  td
+	  {
+		border:2px solid grey;
+	  }
+	}
   }
   .content
   {
-    width: 100%;
-    display: flex;
-    .container
-    {
-      margin:10px;
-      width: 100%;
-    }
-    .icon
-    {
-      height:30px;
-      width:30px;
-      background:red;
-      margin: 0px;
-      margin-left: -35px;
-      padding:0px;
-      position: absolute;
-    }
-    .text
-    {
-      padding-left: 35px;
-      .head
-      {
-        font-size: 20px;
-        margin: 0px;
-        padding:0px;
-        color: gray;
-      }
-    }
+	width: 100%;
+	display: flex;
+	.container
+	{
+	  margin:10px;
+	  width: 100%;
+	}
+	.icon
+	{
+	  height:30px;
+	  width:30px;
+	  margin: 0px;
+	  margin-left: -35px;
+	  padding:0px;
+	  position: absolute;
+	}
+
+	#quality
+	{
+		&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e601";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	font-size: 30px;
+	  }
+	}
+
+	#scenery
+	{
+		&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e602";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	font-size: 30px;
+	  }
+	}
+
+	#wedding
+	{
+		&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e603";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	font-size: 30px;
+	  }
+	}
+
+	#grave
+	{
+		&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e605";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	font-size: 30px;
+	  }
+	}
+
+	#advice
+	{
+		&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e606";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	font-size: 30px;
+	  }
+	}
+
+	#happy
+	{
+		&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e604";
+	  	position: absolute;
+	  	width: 100%;
+	  	height: 100%;
+	  	font-size: 30px;
+	  }
+	}
+
+	.text
+	{
+	  padding-left: 35px;
+	  .head
+	  {
+		font-size: 20px;
+		margin: 0px;
+		padding:0px;
+		color: gray;
+	  }
+	}
   }
 }
 
 .kontakt
 {
   height:100%;
-  background-color: #ffffff;
+  background-color: #27ae60;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
@@ -273,75 +387,70 @@ html
 
   .input-box
   {
-    width:500px;
-    height: 20px;
-    background-color: gray;
-    border:none;
-    margin-top: 10px;
-    opacity: 0.5;
+	width:500px;
+	height: 20px;
+	background-color: gray;
+	border:none;
+	margin-top: 10px;
+	opacity: 0.5;
 
   }
 
 
   .description
   {
-    width:500px;
-    height:150px;
-    border:none;
-    margin-top: 10px;
-    background-color: gray;
-    opacity: 0.5;
-    color:white;
+	width:500px;
+	height:150px;
+	border:none;
+	margin-top: 10px;
+	background-color: gray;
+	opacity: 0.5;
+	color:white;
   }
 
   .error
   {
-    width:500px;
-    height:20px;
-    background-color: red;
+	width:500px;
+	height:20px;
+	background-color: red;
   }
 
   .brix-btn
   {
-    background-color: gray;
-    border:none;
-    margin:5px;
-    padding:10px;
-    font-weight: bold;
-    cursor: pointer;
-    color:#ffffff;
-    text-transform: uppercase;
+	background-color: gray;
+	border:none;
+	margin:5px;
+	padding:10px;
+	font-weight: bold;
+	cursor: pointer;
+	color:#ffffff;
+	text-transform: uppercase;
   }
 
   .text-box
   {
-    width:500px;
-    float:left;
-    margin-left: 20px;
-    h2
-    {
-      text-align: left !important;
-    }
+	width:500px;
+	float:left;
+	margin-left: 20px;
+	h2
+	{
+	  text-align: left !important;
+	}
   }
 
   .formular-berreich
   {
-    width:500px;
-    float:left;
+	width:500px;
+	float:left;
 
-    ul
-    {
-      li
-      {
-        background-color:red;
-      }
-    }
+	ul
+	{
+	  li
+	  {
+		background-color:red;
+	  }
+	}
   }
-}
-
-.background
-{
-  background:darkgreen;
 }
 
 .layer
@@ -357,37 +466,37 @@ html
   z-index:5;
 
   &.active {
-    display: block;
+	display: block;
   }
 
   .content-wrapper
   {
-    position: relative;
-    margin: 0 auto;
-    width:500px;
-    display: block;
-    margin-top: 10px;
+	position: relative;
+	margin: 0 auto;
+	width:500px;
+	display: block;
+	margin-top: 10px;
   }
 
   .layer-content
   {
-    margin: 0 auto;
-    background-color: #ffffff;
-    width:100%;
-    display: block;
-    margin-top: 10px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	width:100%;
+	display: block;
+	margin-top: 10px;
   }
 
   .close-layer
   {
-    position: absolute;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    top:0;
-    right:0;
-    cursor: pointer;
-    @include transform(rotate(45deg));
+	position: absolute;
+	background-color: red;
+	width: 30px;
+	height: 30px;
+	top:0;
+	right:0;
+	cursor: pointer;
+	@include transform(rotate(45deg));
   }
 
 }
@@ -395,31 +504,31 @@ html
 .kalenderberreich
 {
   height:100%;
-  background-color: #ffffff;
+  background-color: #27ae60;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
   color: red;
   table
   {
-      width:100%;
-      height:500px;
-      border:10px solid blue;
-      tr
-      {
-        border:3px solid red;
-        td
-        {
-          border:2px solid grey;
-        }
-      }
+	  width:100%;
+	  height:500px;
+	  border:10px solid blue;
+	  tr
+	  {
+		border:3px solid red;
+		td
+		{
+		  border:2px solid grey;
+		}
+	  }
   }
 
   .innerEvent
   {
-      width:100%;
-      background:blue;
-      font-size: 10px;
+	  width:100%;
+	  background:blue;
+	  font-size: 10px;
   }
 }
 .KalenderButtonNext
@@ -463,37 +572,37 @@ html
   z-index:5;
 
   &.active {
-    display: block;
+	display: block;
   }
 
   .content-wrapper
   {
-    position: relative;
-    margin: 0 auto;
-    width:500px;
-    display: block;
-    margin-top: 10px;
+	position: relative;
+	margin: 0 auto;
+	width:500px;
+	display: block;
+	margin-top: 10px;
   }
 
   .layer-content
   {
-    margin: 0 auto;
-    background-color: #ffffff;
-    width:100%;
-    display: block;
-    margin-top: 10px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	width:100%;
+	display: block;
+	margin-top: 10px;
   }
 
   .close-layer
   {
-    position: absolute;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    top:0;
-    right:0;
-    cursor: pointer;
-    @include transform(rotate(45deg));
+	position: absolute;
+	background-color: red;
+	width: 30px;
+	height: 30px;
+	top:0;
+	right:0;
+	cursor: pointer;
+	@include transform(rotate(45deg));
   }
 
 }
