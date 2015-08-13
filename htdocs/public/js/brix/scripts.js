@@ -99,7 +99,7 @@ jQuery(document).ready(function(){
     var pictureNames = jQuery('.portfolio');
     jQuery(pictureNames).each(function(i,el){
         jQuery(el).click(function(){
-            jQuery.post('mainpage/layer',{plant: jQuery(pictureNames[i]).attr('id')}).done(function(data) {
+            jQuery.post('layer',{plant: jQuery(pictureNames[i]).attr('id')}).done(function(data) {
                 jQuery('.layer .layer-content').html(data);
                 jQuery('.layer').addClass('active');
 
