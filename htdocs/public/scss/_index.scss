@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon/fonts/icomoon.eot?-rktn7u');
-	src:url('../fonts/icomoon/fonts/icomoon.eot?#iefix-rktn7u') format('embedded-opentype'),
-		url('../fonts/icomoon/fonts/icomoon.ttf?-rktn7u') format('truetype'),
-		url('../fonts/icomoon/fonts/icomoon.woff?-rktn7u') format('woff'),
-		url('../fonts/icomoon/fonts/icomoon.svg?-rktn7u#icomoon') format('svg');
+	src:url('../fonts/icomoon/fonts/icomoon.eot?-4441qg');
+	src:url('../fonts/icomoon/fonts/icomoon.eot?#iefix-4441qg') format('embedded-opentype'),
+		url('../fonts/icomoon/fonts/icomoon.ttf?-4441qg') format('truetype'),
+		url('../fonts/icomoon/fonts/icomoon.woff?-4441qg') format('woff'),
+		url('../fonts/icomoon/fonts/icomoon.svg?-4441qg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -77,6 +77,7 @@ html
   clear:both;
   height: 100%;
   color:white;
+  font-family: 'Open Sans', sans-serif;
 
   h1
   {
@@ -532,24 +533,40 @@ html
 .kalenderberreich
 {
   height:100%;
-  background-color: #27ae60;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
-  color: red;
   table
   {
 	  width:100%;
 	  height:500px;
-	  border:10px solid blue;
 	  tr
 	  {
-		border:3px solid red;
-		td
-		{
-		  border:2px solid grey;
-		}
+			border:3px solid white;
+
+			td
+			{
+				width:14%;
+			  border:2px solid white;
+			  vertical-align: baseline;
+			}
 	  }
+  }
+
+  .event
+  {
+		padding: 10px;
+  }
+
+  .number
+  {
+
+  	padding-top: 10px;
+  	border-bottom: 2px solid #8e44ad;
+  	margin-left: 10px;
+  	margin-right: 10px;
+  	position: relative;
+  	color: #8e44ad;
   }
 
   .innerEvent
@@ -563,16 +580,27 @@ html
 {
   width: 50px;
   height: 50px;
-  background: Blue;
   float: right;
+
+  	&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e607";
+	  }
 }
 
 .KalenderButtonLast
 {
   width: 50px;
   height: 50px;
-  background: red;
   float: right;
+
+  	&:before
+		{
+	  	font-family: 'icomoon';
+	  	content:"\e607";
+	  	@include transform(rotate(180deg));
+	  }
 }
 
 .saveBtn

@@ -226,7 +226,7 @@ jQuery(document).ready(function(){
             for(var ii = 0; ii < cols; ii++) {
                 var td = jQuery(document.createElement('td'));
                     td.addClass('tdKalender');
-                    td.append(dayInt);
+                    td.append('<div class="number">' + dayInt + '</div>');
 
                 //Datum zusammen setzten
                 var checkDate = getCheckDate(dayInt,month,year);
@@ -394,7 +394,7 @@ jQuery(document).ready(function(){
             {
                if(kalenderId == dataArray[ii])
                {
-                   jQuery(tdObjecte[i]).append('<div>' + dataContent[i] + '</div>');
+                   jQuery(tdObjecte[i]).append('<div class="event">' + dataContent[i] + '</div>');
                }
             }
         }
