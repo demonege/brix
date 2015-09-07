@@ -9,14 +9,40 @@
 	font-style: normal;
 }
 
+html
+{
+  background:#27ae60;
+  clear:both;
+  height: 100%;
+  color:white;
+  font-family: 'Open Sans', sans-serif;
+
+  h1
+  {
+		text-align: center;
+		font-size: 30px;
+		color:#FFDD00;
+		margin-bottom: 10px;
+  }
+
+  h2
+  {
+		text-align: center;
+		font-size: 25px;
+		color:#FFDD00;
+		margin-bottom: 10px;
+  }
+}
+
 .navi
 {
   background: white;
-  height: 110px;
+  height: 120px;
   width: 100%;
   .logo
   {
 		position: absolute;
+		padding: 10px;
 		height: 100px;
 		width:80px;
 		background-color: white;
@@ -30,21 +56,22 @@
   ul
   {
 		margin-left: 100px;
+		margin-right: 15px;
 		height:100%;
 
 		li
 			{
-		  	float: left;
-		  	margin-left: 10%;
+		  	float: right;
+		  	margin-left: 30px;
 		  	height:100%;
 		  	text-align: center;
-		  	line-height: 110px;
+		  	line-height: 120px;
 			}
 		a
 		  {
 				color:#000000;
 				text-decoration: none;
-				font-size: 20px;
+				font-size: 15px;
     		position: relative;
 		  }
 		a:after
@@ -71,36 +98,11 @@ body
   height: 100%;
 }
 
-html
-{
-  background:#27ae60;
-  clear:both;
-  height: 100%;
-  color:white;
-  font-family: 'Open Sans', sans-serif;
-
-  h1
-  {
-		text-align: center;
-		font-size: 30px;
-		color:#8e44ad;
-		margin-bottom: 10px;
-  }
-
-  h2
-  {
-		text-align: center;
-		font-size: 25px;
-		color:#8e44ad;
-		margin-bottom: 10px;
-  }
-}
-
 .Main
 {
   width: 100%;
   height:100%;
-  background-color: #27ae60;
+  background-color: white;
   margin-top: 10px;
   position: relative;
 }
@@ -108,7 +110,7 @@ html
 .verkauf
 {
   height:100%;
-  background-color: #27ae60;
+  background-color: white;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
@@ -179,8 +181,6 @@ html
 {
   height:100%;
   background-color: #27ae60;
-  padding: 0px 10px 0px 10px;
-  margin-top: 10px;
   position: relative;
   .slider
   {
@@ -221,6 +221,11 @@ html
 	  	font-size: 30px;
 	  	@include transform(rotate(180deg));
 	  }
+
+	  &:hover
+	  {
+	  	cursor: pointer;
+	  }
 	}
 	.btn-next
 	{
@@ -239,6 +244,11 @@ html
 	  	height: 100%;
 	  	left:0;
 	  	font-size: 30px;
+	  }
+
+	  &:hover
+	  {
+	  	cursor: pointer;
 	  }
 	}
 	.slider-content
@@ -284,20 +294,20 @@ html
   }
   .content
   {
-	width: 100%;
-	display: flex;
-	.container
-	{
-	  margin:10px;
-	  width: 100%;
-	}
-	.icon
-	{
-	  height:100%;
-	  width:100%;
-	  left: -45px;
-	  position: relative;
-	}
+		width: 100%;
+		display: flex;
+		.container
+		{
+	 	 margin:10px;
+		  width: 100%;
+		}
+		.icon
+		{
+	 	 height:100%;
+	 	 width:100%;
+	 	 left: -45px;
+	  	position: relative;
+		}
 
 	#quality
 	{
@@ -416,62 +426,70 @@ html
 
   .input-box
   {
-	width:500px;
-	height: 20px;
-	background-color: gray;
-	border:none;
-	margin-top: 10px;
-	opacity: 0.5;
-
+		width:500px;
+		height: 20px;
+		background-color: gray;
+		border:none;
+		margin-top: 10px;
+		opacity: 0.5;
+		color: white;
   }
 
 
   .description
   {
-	width:500px;
-	height:150px;
-	border:none;
-	margin-top: 10px;
-	background-color: gray;
-	opacity: 0.5;
-	color:white;
+		width:500px;
+		height:150px;
+		border:none;
+		margin-top: 10px;
+		background-color: gray;
+		opacity: 0.5;
+		color: white;
   }
 
   .error
   {
-	width:500px;
-	height:20px;
-	background-color: red;
+		width:500px;
+		height:20px;
+		background-color: red;
   }
 
   .brix-btn
   {
-	background-color: gray;
-	border:none;
-	margin:5px;
-	padding:10px;
-	font-weight: bold;
-	cursor: pointer;
-	color:#ffffff;
-	text-transform: uppercase;
+		background-color: gray;
+		border:none;
+		margin:5px;
+		padding:10px;
+		font-weight: bold;
+		cursor: pointer;
+		color:#ffffff;
+		text-transform: uppercase;
+		width:100%;
+
+		&:hover
+		{
+			background-color: white;
+			color:black;
+		}
   }
 
   .text-box
   {
-	width:500px;
-	float:left;
-	margin-left: 20px;
-	h2
-	{
-	  text-align: left !important;
-	}
+		width:500px;
+		line-height: 23px;
+		margin: 0 auto;
+		margin-top:15px;
+		text-align: center;
+		h2
+		{
+		  text-align: center !important;
+		}
   }
 
   .formular-berreich
   {
 	width:500px;
-	float:left;
-
+	margin: 0 auto;
 	ul
 	{
 	  li
@@ -514,6 +532,7 @@ html
 	width:100%;
 	display: block;
 	margin-top: 10px;
+	color:black;
   }
 
   .close-layer
@@ -533,6 +552,8 @@ html
 .kalenderberreich
 {
   height:100%;
+  width: 70%;
+  margin:0 auto;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
@@ -542,12 +563,13 @@ html
 	  height:500px;
 	  tr
 	  {
-			border:3px solid white;
+			border:1px solid white;
 
 			td
 			{
 				width:14%;
-			  border:2px solid white;
+				height: 20%;
+			  border:1px solid white;
 			  vertical-align: baseline;
 			}
 	  }
@@ -562,11 +584,10 @@ html
   {
 
   	padding-top: 10px;
-  	border-bottom: 2px solid #8e44ad;
+  	border-bottom: 1px solid white;
   	margin-left: 10px;
   	margin-right: 10px;
   	position: relative;
-  	color: #8e44ad;
   }
 
   .innerEvent
