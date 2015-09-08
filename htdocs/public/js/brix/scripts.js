@@ -1,17 +1,4 @@
 jQuery(document).ready(function(){
-    //test js
-    function ScriptTest(){
-            jQuery('.picture').click(function(){
-                jQuery('#pic-1').css('color', 'red');
-            });
-    }
-
-    jQuery('#einaus').click(function(){
-       this.toggle(100,
-       function callback(){
-            alert('ist cool');
-       });
-    });
 
     //Slider Element container and picture width
     var cotainerwidth = jQuery('.slider-content .wrapper .container').children();
@@ -325,11 +312,29 @@ jQuery(document).ready(function(){
     jQuery('.KalenderButtonNext').click(function(){
         var useid = jQuery('.KalenderButtonNext').attr('id');
         NextOrLast(useid);
+
+        var tdObjecte = jQuery('.tdKalender');
+        var tdId = [];
+        var i = 0;
+        jQuery(tdObjecte).each(function(){
+            tdId[i] = jQuery(tdObjecte[i]).attr('id');
+            i++;
+        });
+        checkDateEvent(tdId);
     });
 
     jQuery('.KalenderButtonLast').click(function(){
         var useid = jQuery('.KalenderButtonLast').attr('id');
         NextOrLast(useid);
+
+        var tdObjecte = jQuery('.tdKalender');
+        var tdId = [];
+        var i = 0;
+        jQuery(tdObjecte).each(function(){
+            tdId[i] = jQuery(tdObjecte[i]).attr('id');
+            i++;
+        });
+        checkDateEvent(tdId);
     });
 
     function NextOrLast(divId)
@@ -413,4 +418,20 @@ jQuery(document).ready(function(){
             });
         });
     });
+
+    //scroll effect
+    jQuery('a[href*=#]').bind("click",function(event){
+       var full_url = this.href;
+       var parts = full_url.split('#');
+       var target = parts[1];
+       if(target && jQuery('#' + target).offset()) {
+           event.preventDefault();
+
+           var target_offset = $('#' + target).offset();
+           var target_top = target_offset.top;
+
+           jQuery('html, body').animate({scrollTop:target_top}, 500);
+       }
+    });
+
 });
