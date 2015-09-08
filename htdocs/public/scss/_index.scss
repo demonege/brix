@@ -111,8 +111,13 @@ body
   height:100%;
   background-color: white;
   padding: 0px 10px 0px 10px;
-  margin-top: 10px;
+  margin-top: 100px;
   position: relative;
+
+  .contentVerkauf
+  {
+  	text-align: center;
+  }
 
   .brix-btn
   {
@@ -134,45 +139,61 @@ body
 
   .row
   {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
   }
   .name
   {
-	display:none;
+		display:none;
   }
   .winterhart
   {
-	dislay:block;
+		dislay:block;
   }
   .pflegeleicht
   {
-	dislay:block;
+		dislay:block;
   }
   .wenig_licht
   {
-	dislay:block;
+		dislay:block;
   }
   .wenig_wasser
   {
-	dislay:block;
+		dislay:block;
   }
   .portfolio
   {
-	margin: 5px;
-	flex-basis: 19%;
+		margin: 5px;
+		flex-basis: 19%;
+		position: relative;
   }
   .portfolio:hover
   {
-	cursor: pointer;
-	opacity: 0.8;
-	.name
-	{
-	  display:block;
-	  margin-top:-100px;
-	  color: white;
-	}
+		cursor: pointer;
+		opacity: 0.6;
+		.name
+		{
+		  display: block;
+		  color: white;
+		  position: absolute;
+		  top: 0;
+		  left:0;
+		  height: 100%;
+		  width: 100%;
+		  text-align: center;
+		  h3
+		  {
+				font-size: 30px;
+				font-weight: bold;
+		  }
+		  p
+		  {
+				font-size: 20px;
+				font-weight: bold;
+		  }
+		}
   }
 }
 
@@ -278,7 +299,7 @@ body
   background-color: white;
   color:black;
   padding: 0px 10px 0px 10px;
-  margin-top: 40px;
+  margin-top: 100px;
   position: relative;
   table
   {
@@ -288,20 +309,26 @@ body
 	{
 	  td
 	  {
-		border:2px solid grey;
+			border:2px solid grey;
 	  }
 	}
   }
   .content
   {
     width: 100%;
-	display: flex;
+		display: flex;
     .container
     {
       margin:10px;
       width: 100%;
       border: 1px solid #59AB27;
       border-radius: 10px;
+      padding:20px 10px 20px 60px;
+
+      &:hover
+      {
+      	background-color: #59AB27;
+      }
     }
     .icon
     {
@@ -392,8 +419,6 @@ body
 
 		.text
 		{
-		  padding-left: 35px;
-          padding-bottom:10px;
 		  .head
 		  {
 				font-size: 20px;
@@ -406,7 +431,7 @@ body
 		 	.underline
 		 	{
 				width:50%;
-				background-color:white;
+				background-color:black;
 				height:1px;
 				margin-left: 40px;
 				margin-bottom: 8px;
@@ -420,7 +445,7 @@ body
   height:100%;
   background-color: white;
   padding: 0px 10px 0px 10px;
-  margin-top: 40px;
+  margin-top: 100px;
   position: relative;
 
   .formular
@@ -480,16 +505,17 @@ body
 
   .text-box
   {
-	width:500px;
-	line-height: 23px;
-	margin: 0 auto;
-	margin-top:15px;
-	text-align: center;
+		width:500px;
+		line-height: 23px;
+		margin: 0 auto;
+		margin-top:15px;
+		text-align: center;
     color: black;
-	h2
-	{
-	  text-align: center !important;
-	}
+
+		h2
+		{
+	  	text-align: center !important;
+		}
   }
 
   .formular-berreich
@@ -556,30 +582,31 @@ body
 }
 .Kalender
 {
-  margin-top:40px;
+  margin-top:100px;
 }
 .kalenderbackground
 {
-  height:500px;
+  height:100%;
   width:100%;
   background-image: url("../img/anemone.jpg");
   opacity: 0.7;
   position: absolute;
+  @include background-size(cover);
 }
 
 .kalenderberreich
 {
   height:100%;
-  padding: 0px 10px 0px 10px;
-  margin-top: 40px;
+  padding: 80px 10px 80px 10px;
+  margin-top: 10px;
   position: relative;
   color:black;
   table
   {
-      width: 70%;
-      margin:0 auto;
+    width: 70%;
+    margin:0 auto;
 	  height:500px;
-      padding: 10px;
+    padding: 10px;
 	  tr
 	  {
 			border:1px solid black;
@@ -588,8 +615,9 @@ body
 			{
 				width:14%;
 				height: 20%;
-			    border:1px solid black;
-			    vertical-align: baseline;
+			  border:1px solid black;
+			  vertical-align: baseline;
+			  background: rgba(255, 255, 255, 0.5);
 			}
 	  }
   }
