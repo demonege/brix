@@ -278,7 +278,7 @@ body
   background-color: white;
   color:black;
   padding: 0px 10px 0px 10px;
-  margin-top: 10px;
+  margin-top: 40px;
   position: relative;
   table
   {
@@ -294,102 +294,106 @@ body
   }
   .content
   {
-		width: 100%;
-		display: flex;
-		.container
-		{
-	 	 margin:10px;
-		  width: 100%;
-		}
-		.icon
-		{
-	 	 height:100%;
-	 	 width:100%;
-	 	 left: -45px;
-	  	position: relative;
-		}
+    width: 100%;
+	display: flex;
+    .container
+    {
+      margin:10px;
+      width: 100%;
+      border: 1px solid #59AB27;
+      border-radius: 10px;
+    }
+    .icon
+    {
+      height:100%;
+      width:100%;
+      left: -45px;
+      position: relative;
+      padding: 5px;
+    }
 
 	#quality
 	{
 		&:before
 		{
-	  	font-family: 'icomoon';
-	  	content:"\e601";
-	  	position: absolute;
-	  	width: 100%;
-	  	height: 100%;
-	  	font-size: 30px;
-	  }
+          font-family: 'icomoon';
+          content:"\e601";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+	    }
 	}
 
 	#scenery
 	{
 		&:before
 		{
-	  	font-family: 'icomoon';
-	  	content:"\e602";
-	  	position: absolute;
-	  	width: 100%;
-	  	height: 100%;
-	  	font-size: 30px;
-	  }
+          font-family: 'icomoon';
+          content:"\e602";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+	    }
 	}
 
 	#wedding
 	{
 		&:before
 		{
-	  	font-family: 'icomoon';
-	  	content:"\e603";
-	  	position: absolute;
-	  	width: 100%;
-	  	height: 100%;
-	  	font-size: 30px;
-	  }
+          font-family: 'icomoon';
+          content:"\e603";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+	    }
 	}
 
 	#grave
 	{
 		&:before
 		{
-	  	font-family: 'icomoon';
-	  	content:"\e605";
-	  	position: absolute;
-	  	width: 100%;
-	  	height: 100%;
-	  	font-size: 30px;
-	  }
+          font-family: 'icomoon';
+          content:"\e605";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+	    }
 	}
 
 	#advice
 	{
 		&:before
 		{
-	  	font-family: 'icomoon';
-	  	content:"\e606";
-	  	position: absolute;
-	  	width: 100%;
-	  	height: 100%;
-	  	font-size: 30px;
-	  }
+          font-family: 'icomoon';
+          content:"\e606";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+	    }
 	}
 
 	#happy
 	{
 		&:before
 		{
-	  	font-family: 'icomoon';
-	  	content:"\e604";
-	  	position: absolute;
-	  	width: 100%;
-	  	height: 100%;
-	  	font-size: 30px;
-	  }
+          font-family: 'icomoon';
+          content:"\e604";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+	    }
 	}
 
 		.text
 		{
 		  padding-left: 35px;
+          padding-bottom:10px;
 		  .head
 		  {
 				font-size: 20px;
@@ -416,7 +420,7 @@ body
   height:100%;
   background-color: white;
   padding: 0px 10px 0px 10px;
-  margin-top: 10px;
+  margin-top: 40px;
   position: relative;
 
   .formular
@@ -550,7 +554,10 @@ body
   }
 
 }
-
+.Kalender
+{
+  margin-top:40px;
+}
 .kalenderbackground
 {
   height:500px;
@@ -564,7 +571,7 @@ body
 {
   height:100%;
   padding: 0px 10px 0px 10px;
-  margin-top: 10px;
+  margin-top: 40px;
   position: relative;
   color:black;
   table
@@ -594,19 +601,18 @@ body
 
   .number
   {
-
-  	padding-top: 10px;
-  	border-bottom: 1px solid black;
-  	margin-left: 10px;
-  	margin-right: 10px;
-  	position: relative;
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
   }
 
   .innerEvent
   {
-	  width:100%;
-	  background:blue;
-	  font-size: 10px;
+    width:100%;
+    background:blue;
+    font-size: 10px;
   }
 }
 .KalenderButtonNext
