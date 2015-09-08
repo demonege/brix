@@ -49,7 +49,7 @@ class KontaktForm extends Form
             'type' => 'submit',
             'attributes' => array(
                 'value' => 'abschicken',
-                'class' => 'brix-btn',
+                'class' => 'brix-btn-form',
             ),
         ));
 

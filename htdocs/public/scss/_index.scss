@@ -109,7 +109,7 @@ body
 .verkauf
 {
   height:100%;
-  background-color: #27ae60;
+  background-color: white;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
@@ -414,7 +414,7 @@ body
 .kontakt
 {
   height:100%;
-  background-color: #27ae60;
+  background-color: white;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
@@ -438,7 +438,7 @@ body
 
   .description
   {
-		width:500px;
+		width:99%;
 		height:150px;
 		border:none;
 		margin-top: 10px;
@@ -454,36 +454,38 @@ body
 		background-color: red;
   }
 
-  .brix-btn
+  .brix-btn-form
   {
-		background-color: gray;
-		border:none;
-		margin:5px;
-		padding:10px;
-		font-weight: bold;
-		cursor: pointer;
-		color:#ffffff;
-		text-transform: uppercase;
-		width:100%;
+      background-color: #59AB27;
+      border:none;
+      margin-top:5px;
+      padding:10px;
+      font-weight: bold;
+      cursor: pointer;
+      color:#ffffff;
+      text-transform: uppercase;
+      width: 100%;
 
-		&:hover
-		{
-			background-color: white;
-			color:black;
-		}
+	  &:hover
+	  {
+        background-color: #27ae60;
+        border-color:#27ae60;
+        color:#ffffff;
+	  }
   }
 
   .text-box
   {
-		width:500px;
-		line-height: 23px;
-		margin: 0 auto;
-		margin-top:15px;
-		text-align: center;
-		h2
-		{
-		  text-align: center !important;
-		}
+	width:500px;
+	line-height: 23px;
+	margin: 0 auto;
+	margin-top:15px;
+	text-align: center;
+    color: black;
+	h2
+	{
+	  text-align: center !important;
+	}
   }
 
   .formular-berreich
@@ -549,20 +551,28 @@ body
 
 }
 
+.kalenderbackground
+{
+  height:500px;
+  width:100%;
+  background-image: url("../img/anemone.jpg");
+  opacity: 0.7;
+  position: absolute;
+}
+
 .kalenderberreich
 {
   height:100%;
-  width: 70%;
-  margin:0 auto;
   padding: 0px 10px 0px 10px;
   margin-top: 10px;
   position: relative;
   color:black;
-  background-image: url("../img/blume.png");
   table
   {
-	  width:100%;
+      width: 70%;
+      margin:0 auto;
 	  height:500px;
+      padding: 10px;
 	  tr
 	  {
 			border:1px solid black;
@@ -571,8 +581,8 @@ body
 			{
 				width:14%;
 				height: 20%;
-			  border:1px solid black;
-			  vertical-align: baseline;
+			    border:1px solid black;
+			    vertical-align: baseline;
 			}
 	  }
   }
@@ -606,10 +616,15 @@ body
   color: black;
 
   	&:before
-		{
-	  	font-family: 'icomoon';
-	  	content:"\e607";
-	  }
+	{
+	  font-family: 'icomoon';
+	  content:"\e607";
+	}
+
+    &:hover
+    {
+      cursor: pointer;
+    }
 }
 
 .KalenderButtonLast
@@ -621,10 +636,15 @@ body
   @include transform(rotate(180deg));
 
   	&:before
-		{
-	  	font-family: 'icomoon';
-	  	content:"\e607";
-	  }
+	{
+	  font-family: 'icomoon';
+	  content:"\e607";
+	}
+
+    &:hover
+    {
+      cursor: pointer;
+    }
 }
 
 .month

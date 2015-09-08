@@ -4,7 +4,11 @@
     <div class="KalenderButtonLast" id="last"></div>
     <p class="month"></p>
 </div>
-<div class="kalenderberreich"></div>
+<div class="wrapper">
+    <div class="kalenderbackground"></div>
+    <div class="kalenderberreich"></div>
+</div>
+
 <?php if(parse_url($this->serverUrl(true), PHP_URL_PATH) == '/kalenderberreich') : ?>
 	<button class="saveBtn">Termin Eintragen</button>
 <?php endif ?>

@@ -101,10 +101,10 @@ jQuery(document).ready(function(){
     });
 
     //function for ajax validierung
-    jQuery('.brix-btn').click(function(e)
+    jQuery('.brix-btn-form').click(function(e)
     {
         e.preventDefault();
-        var form = jQuery('.brix-btn').parents();
+        var form = jQuery('.brix-btn-form').parents();
         form = form[0];
         var formelements = jQuery(form).children();
         var formdata = [];
