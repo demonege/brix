@@ -129,6 +129,7 @@ body
 	cursor: pointer;
 	color:#ffffff;
 	text-transform: uppercase;
+    transition: background-color 0.5s ease;
   }
   .brix-btn:hover
   {
@@ -316,7 +317,7 @@ body
   .content
   {
     width: 100%;
-		display: flex;
+	display: flex;
     .container
     {
       margin:10px;
@@ -324,11 +325,8 @@ body
       border: 1px solid #59AB27;
       border-radius: 10px;
       padding:20px 10px 20px 60px;
-
-      &:hover
-      {
-      	background-color: #59AB27;
-      }
+      background-color: #59AB27;
+      color: white;
     }
     .icon
     {
@@ -431,7 +429,7 @@ body
 		 	.underline
 		 	{
 				width:50%;
-				background-color:black;
+				background-color:white;
 				height:1px;
 				margin-left: 40px;
 				margin-bottom: 8px;
@@ -494,6 +492,7 @@ body
       color:#ffffff;
       text-transform: uppercase;
       width: 100%;
+      transition: background-color 0.5s ease;
 
 	  &:hover
 	  {
@@ -510,7 +509,7 @@ body
 		margin: 0 auto;
 		margin-top:15px;
 		text-align: center;
-    color: black;
+        color: black;
 
 		h2
 		{
