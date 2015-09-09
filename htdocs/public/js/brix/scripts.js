@@ -139,10 +139,10 @@ jQuery(document).ready(function(){
                     value = value.replace(/\s+| /gi, '');
 
                     if (value == '') {
-                        jQuery(element).append("<div class='error'>Ausfüllen!!!</div>");
+                        jQuery(element).append("<div class='error'>Bitte füllen sie das felde aus</div>");
                     }
                     else if(/\d/.test(value)) {
-                        jQuery(element).append("<div class='error'>Machen sachen</div>");
+                        jQuery(element).append("<div class='error'>Fehlerhafte eingabe bitte korregieren</div>");
                     }
                     else
                     {
@@ -160,7 +160,7 @@ jQuery(document).ready(function(){
                 {
                     var value = jQuery(element).children('.description').val();
                     if (value == '') {
-                        jQuery(element).append("<div class='error'>Ausfüllen!!!</div>");
+                        jQuery(element).append("<div class='error'>Bitte füllen sie das felde aus</div>");
                     }
                     else
                     {
@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
                 {
                     var value = jQuery(element).children('.input-box').val();
                     if (value == '') {
-                        jQuery(element).append("<div class='error'>Ausfüllen!!!</div>");
+                        jQuery(element).append("<div class='error'>Bitte füllen sie das felde aus</div>");
                     }
                     else
                     {
