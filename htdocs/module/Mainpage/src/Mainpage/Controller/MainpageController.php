@@ -32,8 +32,14 @@ class MainpageController extends AbstractActionController
         $galery = new ViewModel();
         $galery->setTemplate('mainpage/mainpage/galery');
 
+        $oeffnungszeiten = new ViewModel();
+        $oeffnungszeiten->setTemplate('mainpage/mainpage/oeffnungszeiten');
+
         $kalenderberreich = new ViewModel();
         $kalenderberreich->setTemplate('mainpage/mainpage/kalenderberreich');
+
+        $imprint = new ViewModel();
+        $imprint->setTemplate('mainpage/mainpage/imprint');
 
         $kontakt->setVariable('form', $this->getContactForm());
 
@@ -41,7 +47,9 @@ class MainpageController extends AbstractActionController
              ->addChild($angebot, 'angebot')
              ->addChild($kontakt, 'kontakt')
              ->addChild($galery, 'galery')
-             ->addChild($kalenderberreich,'kalenderberreich');
+             ->addChild($kalenderberreich,'kalenderberreich')
+             ->addChild($oeffnungszeiten,'oeffnungszeiten')
+             ->addChild($oeffnungszeiten,'imprint');
 
         return $view;
     }
@@ -85,6 +93,14 @@ class MainpageController extends AbstractActionController
     }
 
     public function verkaufAction()
+    {
+    }
+
+    public function oeffnungszeitenAction()
+    {
+    }
+
+    public function imprintAction()
     {
     }
 
