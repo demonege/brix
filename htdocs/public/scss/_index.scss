@@ -46,7 +46,7 @@ html
 		float: right;
 		a
 		  {
-				color:#000000;
+				color:white;
 				text-decoration: none;
 				font-size: 15px;
     		position: relative;
@@ -239,7 +239,6 @@ body
 .bilder-galary
 {
   height:100%;
-  background-color: #27ae60;
   position: relative;
   .slider
   {
@@ -269,6 +268,7 @@ body
 	  width: 30px;
 	  position: absolute;
 	  z-index: 1;
+	  color:black;
 
 	  &:before {
 	  	font-family: 'icomoon';
@@ -294,6 +294,7 @@ body
 	  width: 30px;
 	  position: absolute;
 	  z-index: 1;
+	  color:black;
 
 	  &:before {
 	  	font-family: 'icomoon';
@@ -320,6 +321,7 @@ body
 		width:10%;
 		height:500px;
 		width: 100%;
+		&#pic-0{background-image: url("../img/grass.jpg");}
 		&#pic-1{background-color: midnightblue;}
 		&#pic-2{background-color: darkmagenta;}
 		&#pic-3{background-color: aquamarine;}
@@ -527,7 +529,8 @@ body
 		border-bottom-left-radius: 10px;
 		text-align: center;
 		font-size: 15px;
-		font-weight: bold;
+		padding-top: 4px;
+		padding-bottom: 4px;
   }
 
   .brix-btn-form
@@ -798,17 +801,45 @@ body
 .text-box
 {
   width:500px;
+  height: 170px;
   line-height: 23px;
   margin: 0 auto;
-  margin-top:15px;
-  margin-bottom: 60px;
   text-align: center;
   color: black;
+  border: 1px solid black;
+  position: relative;
+  top:150px;
+  padding: 20px;
+  background: rgba(255,255,255,0.5);
 
   h2
   {
     text-align: center !important;
+    text-decoration: underline;
+    color:black;
   }
+}
+
+.small
+{
+	font-size: 10px;
+	float: left;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.tag
+{
+	float: left;
+	padding-left: 50px;
+	width: 20%
+}
+
+.uhrzeit
+{
+	width: 70%;
+	float: left;
 }
 
 .imprint
@@ -824,6 +855,22 @@ body
 	padding-left: 20px;
 	padding-top:10px;
 	color: black;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder {
+   color: white;
+}
+
+::-moz-placeholder {
+   color: white;
+}
+
+:-ms-input-placeholder {
+   color: white;
 }
 
 

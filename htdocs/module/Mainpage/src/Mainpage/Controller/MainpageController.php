@@ -49,7 +49,7 @@ class MainpageController extends AbstractActionController
              ->addChild($galery, 'galery')
              ->addChild($kalenderberreich,'kalenderberreich')
              ->addChild($oeffnungszeiten,'oeffnungszeiten')
-             ->addChild($oeffnungszeiten,'imprint');
+             ->addChild($imprint,'imprint');
 
         return $view;
     }
