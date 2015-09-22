@@ -321,11 +321,12 @@ body
 		width:10%;
 		height:500px;
 		width: 100%;
-		&#pic-0{background-image: url("../img/grass.jpg");}
-		&#pic-1{background-color: midnightblue;}
-		&#pic-2{background-color: darkmagenta;}
-		&#pic-3{background-color: aquamarine;}
-		&#pic-4{background-color: chocolate;}
+		background-size: cover;
+		&#pic-0{background-image: url("../img/01-15-03-27-AB-Kremp_March_1280_02.jpg");background-position:center;}
+		&#pic-1{background-image: url("../img/08-15-03-27-AB-Kremp_March_1280_07.jpg");}
+		&#pic-2{background-image: url("../img/03-15-03-27-AB-Kremp_March_1280_03.jpg");}
+		&#pic-3{background-image: url("../img/04-15-03-27-AB-Kremp_March_1280_10.jpg");}
+		&#pic-4{background-image: url("../img/09-15-03-27-AB-Kremp_March_1280_08.jpg");}
 	  }
 	  .picture.show
 	  {
