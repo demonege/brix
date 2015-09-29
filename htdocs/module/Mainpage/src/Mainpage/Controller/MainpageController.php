@@ -38,8 +38,6 @@ class MainpageController extends AbstractActionController
         $kalenderberreich = new ViewModel();
         $kalenderberreich->setTemplate('mainpage/mainpage/kalenderberreich');
 
-        $imprint = new ViewModel();
-        $imprint->setTemplate('mainpage/mainpage/imprint');
 
         $kontakt->setVariable('form', $this->getContactForm());
 
@@ -48,8 +46,7 @@ class MainpageController extends AbstractActionController
              ->addChild($kontakt, 'kontakt')
              ->addChild($galery, 'galery')
              ->addChild($kalenderberreich,'kalenderberreich')
-             ->addChild($oeffnungszeiten,'oeffnungszeiten')
-             ->addChild($imprint,'imprint');
+             ->addChild($oeffnungszeiten,'oeffnungszeiten');
 
         return $view;
     }
@@ -102,6 +99,10 @@ class MainpageController extends AbstractActionController
 
     public function imprintAction()
     {
+        $imprint = new ViewModel();
+        $imprint->setTerminal(true);
+
+        return $imprint;
     }
 
     public function angebotAction()
@@ -138,6 +139,7 @@ class MainpageController extends AbstractActionController
         $kalenderSave->setVariable('form', $this->getCalenderForm());
         return $kalenderSave;
     }
+
 
     public function kalenderEventAction()
     {

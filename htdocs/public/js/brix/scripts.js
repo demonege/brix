@@ -98,7 +98,33 @@ jQuery(document).ready(function(){
     jQuery('.close-layer').click(function(){
         jQuery('.layer').removeClass('active');
         jQuery('.formularLayer').removeClass('active');
+        jQuery('.imprintlayer').removeClass('active');
     });
+
+    //Impressum layer
+    jQuery('.imprintLink').click(function() {
+        jQuery.get('imprint', function (data) {
+            jQuery('.imprintlayer .layer-content').html(data);
+            jQuery('.imprintlayer').addClass('active');
+        });
+    });
+
+/**
+ *
+    //Speicherung der ereignisse für kalender
+    jQuery('.saveBtn').click(function() {
+        jQuery.get('kalendersave', function (data) {
+            jQuery('.formularLayer .layer-content').html(data);
+            jQuery('.formularLayer').addClass('active');
+
+            var formdata = jQuery('.formular-berreich input');
+
+            jQuery('.formular-berreich').on('submit', function(){
+                jQuery.post('kalendersave',{name: jQuery(formdata[0]).val(),datum: jQuery(formdata[1]).val()})
+            });
+        });
+    });
+ */
 
     //function for ajax validierung
     jQuery('.brix-btn-form').click(function(e)

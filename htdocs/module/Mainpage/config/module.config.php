@@ -37,7 +37,6 @@ return array(
             'kontakt'           =>__DIR__ . '/../view/mainpage/kontakt.phtml',
             'kalenderberreich'  =>__DIR__ . '/../view/mainpage/kalenderberreich.phtml',
             'oeffnungszeiten'  =>__DIR__ . '/../view/mainpage/oeffnungszeiten.phtml',
-            'imprint'  =>__DIR__ . '/../view/mainpage/imprint.phtml',
         ),
     ),
 );
